@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetReferralInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>
+            <Patient_Id>78541412</Patient_Id>
+            <Referrals>
+                <Referral>
+                    <!--Направление на консультацию к врачу-кардиологу-->
+                    <Referral_Id>147852</Referral_Id>
+                    <Referral_Number>15</Referral_Number>
+                    <Referral_Type>6</Referral_Type>
+                    <Referral_Start_Date>2019-06-01</Referral_Start_Date>
+                    <Referral_End_Date>2019-09-01</Referral_End_Date>
+                    <Payment_Source_Id>1</Payment_Source_Id>
+                    <To_MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</To_MO_OID>
+                    <To_Service_Post>
+                        <Post>
+                            <Post_Id>34</Post_Id>
+                        </Post>
+                    </To_Service_Post>
+                    <To_Resource_Name>Добрынина Анна Ивановна</To_Resource_Name>
+                    <To_Resource_Snils>00000000000</To_Resource_Snils>
+                    <Desease>H83</Desease>
+                    <Note>Нарушения слуха</Note>
+                    <From_MO_OID>1.2.643.5.1.13.13.12.2.59.10097.0.273023</From_MO_OID>
+                    <From_Post>
+                        <Post_Id>109</Post_Id>
+                    </From_Post>
+                    <From_Resource_Name>Иванов Петр Иванович</From_Resource_Name>
+                    <From_Resource_Snils>00000000003</From_Resource_Snils>
+                    <Available_Record>AVAILABLE</Available_Record>
+                </Referral>
+            </Referrals>
+        </GetReferralInfoResponse>
+    </soap:Body>
+</soap:Envelope>

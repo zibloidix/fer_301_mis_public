@@ -1,0 +1,3 @@
+proxy/node_modules
+server/node_modules
+server/user.conf.yaml

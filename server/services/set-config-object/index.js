@@ -1,0 +1,1 @@
+module.exports = require('./set-config-object.js');

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetScheduleInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>30849258-b880-11e9-9a96-005056b17475</Session_ID>
+            <Schedule>
+                <Slots>
+                    <Slot_Id>2d40d678-45d0-4ecc-a173-e760833cea07</Slot_Id>
+                    <VisitTime>2019-06-20T08:00:00+03:00</VisitTime>
+                    <Room>102</Room>
+                </Slots>
+                <Slots>
+                    <Slot_Id>f3040f1a-fd8b-448e-a376-972b0d8bc8ed</Slot_Id>
+                    <VisitTime>2019-06-20T09:00:00+03:00</VisitTime>
+                    <Room>102</Room>
+                </Slots>
+                <Slots>
+                    <Slot_Id>3ebd019d-d0ec-43ba-b53a-80f8f1279a88</Slot_Id>
+                    <VisitTime>2019-06-20T10:00:00+03:00</VisitTime>
+                    <Room>102</Room>
+                </Slots>
+            </Schedule>
+        </GetScheduleInfoResponse>
+    </soap:Body>
+</soap:Envelope>

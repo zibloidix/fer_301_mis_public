@@ -1,0 +1,934 @@
+{
+	"info": {
+		"_postman_id": "e6faa291-f268-4b22-bc8d-a8aa35cc3ae2",
+		"name": "FER_3.0.1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetWSDL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}?wsdl",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetJSONDatabase",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url-root}}/get-json-database",
+					"host": [
+						"{{url-root}}"
+					],
+					"path": [
+						"get-json-database"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDefaultYamlConfig",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url-root}}/yaml-config/default",
+					"host": [
+						"{{url-root}}"
+					],
+					"path": [
+						"yaml-config",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserYamlConfig",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url-root}}/yaml-config/user",
+					"host": [
+						"{{url-root}}"
+					],
+					"path": [
+						"yaml-config",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutUserYamlConfig",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "name: 'user.conf.yml'\nuseDefaultYamlConfig: true\noperations:\n  - name: 'GetPatientInfo'\n    request: 'GetPatientInfoRequest'\n    response: 'GetPatientInfoResponse'\n    rules: \n      - id: 'GetPatientInfoResponseReferal0'\n        description: 'Стандартный ответ при referal = 0'\n        path: 'get-patient-info/responses/get-patient-info-response-referal-0.xml'\n        isActive: true\n        isError: false\n      - id: 'GetPatientInfoResponseReferal1'\n        description: 'Стандартный ответ при referal = 1'\n        path: 'get-patient-info/responses/get-patient-info-response-referal-1.xml'\n        isActive: false\n        isError: false\n      - id: 'GetPatientInfoResponseError_PATIENT_NOT_FOUND'\n        description: 'Ошибка PATIENT_NOT_FOUND'\n        path: 'get-patient-info/responses/ERROR_PATIENT_NOT_FOUND.xml'\n        isActive: false\n        isError: true\n      - id: 'GetPatientInfoResponseError_INTERNAL_ERROR'\n        description: 'Ошибка INTERNAL_ERROR'\n        path: 'get-patient-info/responses/ERROR_INTERNAL_ERROR.xml'\n        isActive: false\n        isError: true\n      - id: 'GetPatientInfoResponseError_SESSION_TIMED_OUT'\n        description: 'Ошибка SESSION_TIMED_OUT'\n        path: 'get-patient-info/responses/ERROR_SESSION_TIMED_OUT.xml'\n        isActive: false\n        isError: true\n  - name: 'GetReferralInfo'\n    request: 'GetReferralInfoRequest'\n    response: 'GetReferralInfoResponse'\n    rules:\n      - id: 'GetReferralInfoResponse'\n        description: 'Стандартный ответ'\n        path: 'get-referral-info/responses/get-referral-info-response.xml'\n        isActive: true\n        isError: false\n      - id: 'GetReferralInfoResponseError_PATIENT_NOT_FOUND'\n        description: 'Ошибка PATIENT_NOT_FOUND'\n        path: 'get-referral-info/responses/ERROR_PATIENT_NOT_FOUND.xml'\n        isActive: false\n        isError: true\n      - id: 'GetReferralInfoResponseError_PATIENT_NOT_FOUND'\n        description: 'Ошибка INTERNAL_ERROR'\n        path: 'get-referral-info/responses/ERROR_INTERNAL_ERROR.xml'\n        isActive: false\n        isError: true\n      - id: 'GetReferralInfoResponseError_SESSION_TIMED_OUT'\n        description: 'Ошибка SESSION_TIMED_OUT'\n        path: 'get-referral-info/responses/ERROR_SESSION_TIMED_OUT.xml'\n        isActive: false\n        isError: true\n      - id: 'GetReferralInfoResponseError_REFERRAL_NOT_FOUND'\n        description: 'Ошибка REFERRAL_NOT_FOUND'\n        path: 'get-referral-info/responses/ERROR_REFERRAL_NOT_FOUND.xml'\n        isActive: false\n        isError: true\n      - id: 'GetReferralInfoResponseError_REFERRAL_PERIOD_HAS_EXPIRED'\n        description: 'Ошибка REFERRAL_PERIOD_HAS_EXPIRED'\n        path: 'get-referral-info/responses/ERROR_REFERRAL_PERIOD_HAS_EXPIRED.xml'\n        isActive: false\n        isError: true\n      - id: 'GetReferralInfoResponseError_MO_NOT_CONNECTED_REFERRAL'\n        description: 'Ошибка MO_NOT_CONNECTED_REFERRAL'\n        path: 'get-referral-info/responses/ERROR_MO_NOT_CONNECTED_REFERRAL.xml'\n        isActive: false\n        isError: true\n      - id: 'GetReferralInfoResponseError_UNDEFINED_ERROR'\n        description: 'Ошибка UNDEFINED_ERROR'\n        path: 'get-referral-info/responses/ERROR_UNDEFINED_ERROR.xml'\n        isActive: false\n        isError: true\n      - id: 'GetReferralInfoResponseError_APPOINT_PATIENT_REGISTERED_SPECIALIST'\n        description: 'Ошибка APPOINT_PATIENT_REGISTERED_SPECIALIST'\n        path: 'get-referral-info/responses/ERROR_APPOINT_PATIENT_REGISTERED_SPECIALIST.xml'\n        isActive: false\n        isError: true\n  - name: 'GetMOInfoExtended'\n    request: 'GetMOInfoExtendedRequest'\n    response: 'GetMOInfoExtendedResponse'\n    rules: \n      - id: 'GetMOInfoExtendedResponse'\n        description: 'Стандартный ответ'\n        path: 'get-mo-info-extended/responses/get-mo-info-extended-response.xml'\n        isActive: true\n        isError: false\n      - id: 'GetMOInfoExtendedResponseError_ERROR_INTERNAL_ERROR'\n        description: 'Ошибка INTERNAL_ERROR'\n        path: 'get-mo-info-extended/responses/ERROR_INTERNAL_ERROR.xml'\n        isActive: false\n        isError: true\n      - id: 'GetMOInfoExtendedResponseError_ERROR_NO_DATA_FOUND'\n        description: 'Ошибка ERROR_NO_DATA_FOUND'\n        path: 'get-mo-info-extended/responses/ERROR_NO_DATA_FOUND.xml'\n        isActive: false\n        isError: true\n      - id: 'GetMOInfoExtendedResponseError_ERROR_SESSION_TIMED_OUT'\n        description: 'Ошибка ERROR_SESSION_TIMED_OUT'\n        path: 'get-mo-info-extended/responses/ERROR_SESSION_TIMED_OUT.xml'\n        isActive: false\n        isError: true\n  - name: 'GetMOResourceInfo'\n    request: 'GetMOResourceInfoRequest'\n    response: 'GetMOResourceInfoResponse'\n    rules: \n      - id: 'GetMOResourceInfoResponseSpecialist'\n        description: 'Ответ с перечнем ресурсов - специалистов'\n        path: 'get-mo-resource-info/responses/get-mo-resource-info-response-specialist.xml'\n        isActive: true\n        isError: false\n      - id: 'GetMOResourceInfoResponseRoom'\n        description: 'Ответ с перечнем ресурсов - специалистов'\n        path: 'get-mo-resource-info/responses/get-mo-resource-info-response-room.xml'\n        isActive: true\n        isError: false\n      - id: 'GetMOResourceInfoResponseError_ERROR_INTERNAL_ERROR'\n        description: 'Ошибка ERROR_INTERNAL_ERROR'\n        path: 'get-mo-info-extended/responses/ERROR_INTERNAL_ERROR.xml'\n        isActive: false\n        isError: true\n      - id: 'GetMOResourceInfoResponseError_ERROR_NO_DATA_FOUND'\n        description: 'Ошибка ERROR_NO_DATA_FOUND'\n        path: 'get-mo-info-extended/responses/ERROR_NO_DATA_FOUND.xml'\n        isActive: false\n        isError: true\n      - id: 'GetMOResourceInfoResponseError_ERROR_SESSION_TIMED_OUT'\n        description: 'Ошибка ERROR_SESSION_TIMED_OUT'\n        path: 'get-mo-info-extended/responses/ERROR_SESSION_TIMED_OUT.xml'\n        isActive: false\n        isError: true\n  - name: 'GetServicePostSpecsInfo'\n    request: 'GetServicePostSpecsInfoRequest'\n    response: 'GetServicePostSpecsInfoResponse'\n    rules: \n      - id: 'GetServicePostSpecsInfoResponse'\n        description: 'Ответ с перечнем должностей медицинских специалистов'\n        path: 'get-service-post-specs-info/responses/get-service-post-specs-info-response.xml'\n        isActive: true\n        isError: false\n      - id: 'GetServicePostSpecsInfoResponseError_ERROR_INTERNAL_ERROR'\n        description: 'Ошибка ERROR_INTERNAL_ERROR'\n        path: 'get-service-post-specs-info/responses/ERROR_INTERNAL_ERROR.xml'\n        isActive: false\n        isError: true\n      - id: 'GetServicePostSpecsInfoResponseError_ERROR_NO_DATA_FOUND'\n        description: 'Ошибка ERROR_NO_DATA_FOUND'\n        path: 'get-service-post-specs-info/responses/ERROR_NO_DATA_FOUND.xml'\n        isActive: false\n        isError: true\n      - id: 'GetServicePostSpecsInfoResponseError_ERROR_SESSION_TIMED_OUT'\n        description: 'Ошибка ERROR_SESSION_TIMED_OUT'\n        path: 'get-service-post-specs-info/responses/ERROR_SESSION_TIMED_OUT.xml'\n        isActive: false\n        isError: true\n  - name: 'GetScheduleInfo'\n    request: 'GetScheduleInfoRequest'\n    response: 'GetScheduleInfoResponse'\n    rules: \n      - id: 'GetScheduleInfoResponse'\n        description: 'Ответ с информацией о свободных слотах для записи к врачу'\n        path: 'get-schedule-info/responses/get-schedule-info-response.xml'\n        isActive: true\n        isError: false\n      - id: 'GetScheduleInfoResponseError_ERROR_INTERNAL_ERROR'\n        description: 'Ошибка ERROR_INTERNAL_ERROR'\n        path: 'get-schedule-info/responses/ERROR_INTERNAL_ERROR.xml'\n        isActive: false\n        isError: true\n      - id: 'GetScheduleInfoResponseError_ERROR_NO_DATA_FOUND'\n        description: 'Ошибка ERROR_NO_DATA_FOUND'\n        path: 'get-schedule-info/responses/ERROR_NO_DATA_FOUND.xml'\n        isActive: false\n        isError: true\n      - id: 'GetScheduleInfoResponseError_ERROR_SESSION_TIMED_OUT'\n        description: 'Ошибка ERROR_SESSION_TIMED_OUT'\n        path: 'get-schedule-info/responses/ERROR_SESSION_TIMED_OUT.xml'\n        isActive: false\n        isError: true\n  - name: 'CreateAppointment'\n    request: 'CreateAppointmentRequest'\n    response: 'CreateAppointmentResponse'\n    rules: \n      - id: 'CreateAppointmentResponse'\n        description: 'Ответ с информацией об успешной записи гражданина на прием'\n        path: 'create-appointment/responses/create-appointment-response.xml'\n        isActive: true\n        isError: false\n      - id: 'CreateAppointmentRequest_APPOINT_PATIENT_REGISTERED_OTHER_SPECIALIST'\n        description: 'Ответ в случае наличия записи к врачу той же должности у гражданина'\n        path: 'create-appointment/responses/APPOINT_PATIENT_REGISTERED_OTHER_SPECIALIST.xml'\n        isActive: false\n        isError: false\n      - id: 'CreateAppointmentRequest_APPOINT_PATIENT_REGISTERED_SPECIALIST'\n        description: 'Ответ в случае наличия у гражданина записи на это время к другому специалисту'\n        path: 'create-appointment/responses/APPOINT_PATIENT_REGISTERED_SPECIALIST.xml'\n        isActive: false\n        isError: false\n      - id: 'CreateAppointmentRequest_APPOINT_TIME_AVAILABLE_PATIENT_OTHER_AGE'\n        description: 'Ответ в случае невозможности записи на выбранное время в связи доступностью записи только граждан определенного возраста'\n        path: 'create-appointment/responses/APPOINT_TIME_AVAILABLE_PATIENT_OTHER_AGE.xml'\n        isActive: false\n        isError: false\n      - id: 'CreateAppointmentRequest_APPOINT_TIME_IS_BUSY'\n        description: 'Извините, запись невозможна. Время уже занято другим пациентом. Выберите другое время'\n        path: 'create-appointment/responses/APPOINT_TIME_IS_BUSY.xml'\n        isActive: false\n        isError: false\n      - id: 'CreateAppointmentRequest_APPOINT_VISIT_TIME_HAS_PASSED'\n        description: 'Извините, запись невозможна. Время начала приема уже прошло. Выберите другое время'\n        path: 'create-appointment/responses/APPOINT_VISIT_TIME_HAS_PASSED.xml'\n        isActive: false\n        isError: false\n      - id: 'CreateAppointmentResponseError_ERROR_INTERNAL_ERROR'\n        description: 'Ошибка ERROR_INTERNAL_ERROR'\n        path: 'create-appointment/responses/ERROR_INTERNAL_ERROR.xml'\n        isActive: false\n        isError: true\n      - id: 'CreateAppointmentResponseError_FOR_CALL_EPGU_ERROR_DATA_MIS'\n        description: 'Ошибка FOR_CALL_EPGU_ERROR_DATA_MIS'\n        path: 'create-appointment/responses/FOR_CALL_EPGU_ERROR_DATA_MIS.xml'\n        isActive: false\n        isError: true\n  - name: 'CancelAppointment'\n    request: 'CancelAppointmentRequest'\n    response: 'CancelAppointmentResponse'\n    rules: \n      - id: 'CancelAppointmentResponse'\n        description: 'Ответ в случае успешной отмены записи'\n        path: 'cancel-appointment/responses/cancel-appointment-response.xml'\n        isActive: true\n        isError: false\n      - id: 'CancelAppointmentResponse_RECORD_CANNOT_CANCELED'\n        description: 'Ответ в случае невозможности отмены записи'\n        path: 'cancel-appointment/responses/RECORD_CANNOT_CANCELED.xml'\n        isActive: false\n        isError: false\n      - id: 'CancelAppointmentResponse_RECORD_NOT_FOUND'\n        description: 'Ответ в случае если запись не найдена'\n        path: 'cancel-appointment/responses/RECORD_NOT_FOUND.xml'\n        isActive: false\n        isError: false\n      - id: 'СancelAppointmentResponseError_ERROR_INTERNAL_ERROR'\n        description: 'Ошибка ERROR_INTERNAL_ERROR'\n        path: 'cancel-appointment/responses/ERROR_INTERNAL_ERROR.xml'\n        isActive: false\n        isError: true\n  - name: 'ReferralAppointmentInformation'\n    request: 'ReferralAppointmentInformationRequest'\n    response: 'ReferralAppointmentInformationResponse'\n    rules: \n      - id: 'ReferralAppointmentInformationResponse'\n        description: 'Ответ с информацией об успешном приеме сведений'\n        path: 'referral-appointment-information/responses/referral-appointment-information-response.xml'\n        isActive: true\n        isError: false\n      - id: 'ReferralAppointmentInformationResponseError_ERROR_INTERNAL_ERROR'\n        description: 'Ошибка ERROR_INTERNAL_ERROR'\n        path: 'referral-appointment-information/responses/ERROR_INTERNAL_ERROR.xml'\n        isActive: false\n        isError: true\n      - id: 'ReferralAppointmentInformationResponseError_ERROR_FAILURE_OPERATION'\n        description: 'Ошибка ERROR_FAILURE_OPERATION'\n        path: 'referral-appointment-information/responses/ERROR_FAILURE_OPERATION.xml'\n        isActive: false\n        isError: true\n",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url-root}}/yaml-config/user",
+					"host": [
+						"{{url-root}}"
+					],
+					"path": [
+						"yaml-config",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPatientInfo_Pass_referral_0",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetPatientInfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!--Блок подписи -->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-112254\">\n        <GetPatientInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Patient_Data>\n                <OMS_Number>8001992031291883</OMS_Number>\n                <SNILS>98746937307</SNILS>\n                <First_Name>Ольга</First_Name>\n                <Last_Name>Иванова</Last_Name>\n                <Middle_Name>Николаевна</Middle_Name>\n                <Birth_Date>1987-06-06</Birth_Date>\n                <Sex>F</Sex>\n            </Patient_Data>\n            <!-- Идентификация гражданина без направлений-->\n            <Pass_referral>0</Pass_referral>\n        </GetPatientInfoRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPatientInfo_Pass_referral_1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetPatientInfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!--Блок подписи -->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-112254\">\n        <GetPatientInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Patient_Data>\n                <OMS_Number>8001992031291883</OMS_Number>\n                <SNILS>49870321428</SNILS>\n                <First_Name>Александра</First_Name>\n                <Last_Name>Соколова</Last_Name>\n                <Middle_Name>Матвеевна</Middle_Name>\n                <Birth_Date>1986-06-06</Birth_Date>\n                <Sex>F</Sex>\n            </Patient_Data>\n            <!-- Необходимо вернуть направления гражданина при их наличии-->\n            <Pass_referral>1</Pass_referral>\n        </GetPatientInfoRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMOInfoExtended",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetMOInfoExtended",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос перечня структурных подразделений медицинских организаций, доступных гражданину для записи к врачу -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!-- Блок подписи-->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-49e35854-f04d-4688-b8dc-1d0668b3a1a0\">\n        <GetMOInfoExtendedRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n        </GetMOInfoExtendedRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReferralInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"type": "text",
+						"value": "GetReferralInfo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:s='http://www.w3.org/2001/XMLSchema' xmlns:wsa='http://www.w3.org/2005/08/addressing'>\n    <SOAP-ENV:Header>\n        <wsa:MessageID>urn:uuid:22842BF8-E0E0-11EA-BFA2-0050568D2145</wsa:MessageID>\n    </SOAP-ENV:Header>\n    <SOAP-ENV:Body>\n        <GetReferralInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Patient_Data>\n                <OMS_Number>8001992031291883</OMS_Number>\n                <SNILS>98746937307</SNILS>\n                <First_Name>Александра</First_Name>\n                <Last_Name>Соколова</Last_Name>\n                <Middle_Name>Матвеевна</Middle_Name>\n                <Birth_Date>1986-06-06</Birth_Date>\n                <Sex>F</Sex>\n            </Patient_Data>\n            <Referral_Number>140005__::</Referral_Number>\n        </GetReferralInfoRequest>\n    </SOAP-ENV:Body>\n</SOAP-ENV:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMOInfoExtended_Service_Posts_One",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetMOInfoExtended",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос перечня структурных подразделений медицинских организаций, в которые можно записаться на прием к врачу определенной должности -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!-- Блок подписи-->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-6759ff3f-d0ea-4d5c-b05c-4a27d4fa2321\">\n        <GetMOInfoExtendedRequest  xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>1291473c-91cb-11e9-892c-005056b1f66d</Session_ID>\n            <Service_Posts>\n                <Post>\n                    <!--врач-оториноларинголог-->\n                    <Post_Id>53</Post_Id>\n                </Post>\n            </Service_Posts>\n        </GetMOInfoExtendedRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMOInfoExtended_Service_Posts_One_Many",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetMOInfoExtended",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос перечня структурных подразделений медицинских организаций, в которые можно записаться на прием к врачу по одной из указанных должностей -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!-- Блок подписи-->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-6759ff3f-d0ea-4d5c-b05c-4a27d4fa2321\">\n        <GetMOInfoExtendedRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>1291473c-91cb-11e9-892c-005056b1f66d</Session_ID>\n            <Service_Posts>\n                <!--На консультацию к специалисту (Хирург)-->\n                <Post>\n                    <!--врач-хирург-->\n                    <Post_Id>122</Post_Id>\n                </Post>\n                <Post>\n                    <!--врач - детский хирург-->\n                    <Post_Id>28</Post_Id>\n                </Post>\n            </Service_Posts>\n        </GetMOInfoExtendedRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMOResourceInfo_Add_Info_Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetMOResourceInfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос перечня ресурсов (специалистов, кабинетов) для записи к врачу выбранной должности (запись без направления) -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!-- Блок подписи-->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-6759ff3f-d0ea-4d5c-b05c-4a27d4fa2321\">\n        <GetMOResourceInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>413f9340-91be-11e9-ba04-005056b1f66d</Session_ID>\n            <Service_Posts>\n                <!--На консультацию к специалисту узкой специализации (врач-вертеброневролог - отсутствует в справочнике)-->\n                <Post>\n                    <!--врач-невролог-->\n                    <Post_Id>45</Post_Id>\n                    <Add_Info_Post>\n                        <Inner_Id>45_098</Inner_Id>\n                        <Inner_Name>врач-вертеброневролог</Inner_Name>\n                    </Add_Info_Post>\n                </Post>\n            </Service_Posts>\n            <MO_OID_List>\n                <MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.350250</MO_OID>\n            </MO_OID_List>\n            <Start_Date_Range>2019-06-19</Start_Date_Range>\n            <End_Date_Range>2019-07-03</End_Date_Range>\n        </GetMOResourceInfoRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMOResourceInfo_Referral_Id_Specialty_Id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetMOResourceInfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:s='http://www.w3.org/2001/XMLSchema' xmlns:wsa='http://www.w3.org/2005/08/addressing'>\n    <SOAP-ENV:Header>\n        <wsa:MessageID>urn:uuid:F8A7CA8A-DCF5-11EA-BFA2-0050568D2145</wsa:MessageID>\n    </SOAP-ENV:Header>\n    <SOAP-ENV:Body>\n        <GetMOResourceInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Service_Specialty>\n                <Specialty_Id>13</Specialty_Id>\n                <Services_Info>\n                    <Complex_Service_Name>Общий анализ крови</Complex_Service_Name>\n                    <Complex_Service_Id>A566.001</Complex_Service_Id>\n                    <Service>\n                        <Service_Id>B03.016.004</Service_Id>\n                    </Service>\n                    <Service>\n                        <Service_Id>A09.05.045</Service_Id>\n                    </Service>\n                </Services_Info>\n            </Service_Specialty>\n            <MO_OID_List>\n                <MO_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407</MO_OID>\n            </MO_OID_List>\n            <Referral_Id>4f9e47ec-aea2-4e60-9859-7beab3d1f70a</Referral_Id>\n            <Start_Date_Range>2020-08-13</Start_Date_Range>\n            <End_Date_Range>2020-08-27</End_Date_Range>\n        </GetMOResourceInfoRequest>\n    </SOAP-ENV:Body>\n</SOAP-ENV:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMOResourceInfo_Referral_Id_Specialty_Id_Post_Id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetMOResourceInfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:s='http://www.w3.org/2001/XMLSchema' xmlns:wsa='http://www.w3.org/2005/08/addressing'>\n    <SOAP-ENV:Header>\n        <wsa:MessageID>urn:uuid:1C63CA8A-DD1B-11EA-BFA2-0050568D2145</wsa:MessageID>\n    </SOAP-ENV:Header>\n    <SOAP-ENV:Body>\n        <GetMOResourceInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Service_Specialty>\n                <Specialty_Id>13</Specialty_Id>\n                <Services_Info>\n                    <Complex_Service_Name>Общий анализ крови</Complex_Service_Name>\n                    <Complex_Service_Id>A566.001</Complex_Service_Id>\n                    <Service>\n                        <Service_Id>B03.016.004</Service_Id>\n                    </Service>\n                    <Service>\n                        <Service_Id>A09.05.045</Service_Id>\n                    </Service>\n                </Services_Info>\n            </Service_Specialty>\n            <MO_OID_List>\n                <MO_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407</MO_OID>\n            </MO_OID_List>\n            <Referral_Id>4f9e47ec-aea2-4e60-9859-7beab3d1f70a</Referral_Id>\n            <Start_Date_Range>2020-08-13</Start_Date_Range>\n            <End_Date_Range>2020-08-27</End_Date_Range>\n        </GetMOResourceInfoRequest>\n    </SOAP-ENV:Body>\n</SOAP-ENV:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMOResourceInfo_Post_Id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetMOResourceInfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос перечня  ресурсов (специалистов, кабинетов) одной из указанных должностей -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!-- Блок подписи-->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-6759ff3f-d0ea-4d5c-b05c-4a27d4fa2321\">\n        <GetMOResourceInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Service_Posts>\n                <!--На консультацию к специалисту (Хирург)-->\n                <Post>\n                    <!--врач-хирург-->\n                    <Post_Id>109</Post_Id>\n                </Post>\n            </Service_Posts>\n            <MO_OID_List>\n                <MO_OID>1.2.643.5.1.13.13.12.2.65.6741.0.156062</MO_OID>\n            </MO_OID_List>\n            <Start_Date_Range>2020-08-21</Start_Date_Range>\n            <End_Date_Range>2020-08-28</End_Date_Range>\n        </GetMOResourceInfoRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMOResourceInfo_Post_Id_Referral_Id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"type": "text",
+						"value": "GetMOResourceInfo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version='1.0' encoding='UTF-8'?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" soapenv:actor=\"http://smev.gosuslugi.ru/actors/smev\">\n            <wsse:BinarySecurityToken EncodingType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary\" ValueType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3\" wsu:Id=\"X509-bc720523-1308-4c5b-a7b7-45a235a83227\">MIII+zCCCKagAwIBAgIQAdYNpxEs2mAAAADCAAYAAjAMBggqhQMHAQEDAgUAMIIBmzEYMBYGA1UEAwwP0J7QkNCeICLQmNCY0KIiMXAwbgYDVQQKDGfQntGC0LrRgNGL0YLQvtC1INCQ0LrRhtC40L7QvdC10YDQvdC+0LUg0J7QsdGJ0LXRgdGC0LLQviAi0JjQvdGE0L7QotC10JrQoSDQmNC90YLQtdGA0L3QtdGCINCi0YDQsNGB0YIiMQswCQYDVQQGEwJSVTEcMBoGA1UECAwTNzcg0LMuINCc0L7RgdC60LLQsDEVMBMGA1UEBwwM0JzQvtGB0LrQstCwMSUwIwYJKoZIhvcNAQkBFhZTdXBwb3J0SUlUQGluZm90ZWNzLnJ1MW4wbAYDVQQJDGXQodGC0LDRgNGL0Lkg0J/QtdGC0YDQvtCy0YHQutC+LdCg0LDQt9GD0LzQvtCy0YHQutC40Lkg0L/RgNC+0LXQt9C0LCDQtC4gMS8yMywg0YHRgtGALiAxLCDQvtGE0LjRgSA4ODEaMBgGCCqFAwOBAwEBEgwwMDc3NDMwMjA1NjAxGDAWBgUqhQNkARINMTAyNzczOTExMzA0OTAeFw0yMDA0MDgxMzEwMjNaFw0yMTA0MDgxMzEwMjNaMIIBJDEmMCQGA1UEAwwd0JzQmNCd0JfQlNCg0JDQkiDQoNCe0KHQodCY0JgxJjAkBgNVBAoMHdCc0JjQndCX0JTQoNCQ0JIg0KDQntCh0KHQmNCYMQowCAYDVQQLDAEwMQswCQYDVQQGEwJSVTEcMBoGA1UECAwTNzcg0LMuINCc0L7RgdC60LLQsDEVMBMGA1UEBwwM0JzQvtGB0LrQstCwMSAwHgYJKoZIhvcNAQkBFhFjYUByb3NtaW56ZHJhdi5ydTEsMCoGA1UECQwjINCg0LDRhdC80LDQvdC+0LLRgdC60LjQuSwg0LQuIDMvMjUxGjAYBggqhQMDgQMBARIMMDA3NzA3Nzc4MjQ2MRgwFgYFKoUDZAESDTExMjc3NDY0NjA4OTYwZjAfBggqhQMHAQEBATATBgcqhQMCAiQABggqhQMHAQECAgNDAARA6nRgsPptnGT5fiydmp/EemmRgSGty2TY7xl1pAF4B+3Ykhgr4dUJ6cSVCZ3TxtysDwVcjwsFhT7igYq9XuLm04EJADAwMDYwMDAyo4IFIzCCBR8wDgYDVR0PAQH/BAQDAgP4MB0GA1UdJQQWMBQGCCsGAQUFBwMEBggrBgEFBQcDAjAdBgNVHQ4EFgQUC2K8FbQtfD1adNdZdXqHtwmw71wwJwYDVR0gBCAwHjAIBgYqhQNkcQEwCAYGKoUDZHECMAgGBiqFA2RxAzA0BgUqhQNkbwQrDCki0JrRgNC40L/RgtC+0J/RgNC+IENTUCIg0LLQtdGA0YHQuNGPIDQuMDAMBgNVHRMBAf8EAjAAMIIBzwYFKoUDZHAEggHEMIIBwAyBiNCh0YDQtdC00YHRgtCy0L4g0LrRgNC40L/RgtC+0LPRgNCw0YTQuNGH0LXRgdC60L7QuSDQt9Cw0YnQuNGC0Ysg0LjQvdGE0L7RgNC80LDRhtC40LggKNCh0JrQl9CYKSBWaVBOZXQgQ1NQIDQuMiAo0LjRgdC/0L7Qu9C90LXQvdC40LUgMykMbdCf0YDQvtCz0YDQsNC80LzQvdGL0Lkg0LrQvtC80L/Qu9C10LrRgSAiVmlQTmV0INCj0LTQvtGB0YLQvtCy0LXRgNGP0Y7RidC40Lkg0YbQtdC90YLRgCA0ICjQstC10YDRgdC40Y8gNC42KSIMXtCh0LXRgNGC0LjRhNC40LrQsNGCINGB0L7QvtGC0LLQtdGC0YHRgtCy0LjRjyDihJYg0KHQpC8xMjQtMzQzMyDQvtGCIDA2INC40Y7Qu9GPIDIwMTgg0LPQvtC00LAMZNCh0LXRgNGC0LjRhNC40LrQsNGCINGB0L7QvtGC0LLQtdGC0YHRgtCy0LjRjyDihJYg0KHQpC8xMTgtMzUxMCDQvtGCIDI1INC+0LrRgtGP0LHRgNGPIDIwMTgg0LPQvtC00LAwgbYGCCsGAQUFBwEBBIGpMIGmMC0GCCsGAQUFBzABhiFodHRwOi8vY2FkZXMuaWl0cnVzdC5ydTo4Nzc3L29jc3AwOQYIKwYBBQUHMAKGLWh0dHA6Ly91YzEuaWl0cnVzdC5ydS91Yy9DQS1JSVQtKEszKS0yMDIwLmNlcjA6BggrBgEFBQcwAoYuaHR0cHM6Ly91YzEuaWl0cnVzdC5ydS91Yy9DQS1JSVQtKEszKS0yMDIwLmNlcjBzBgNVHR8EbDBqMDOgMaAvhi1odHRwOi8vdWMxLmlpdHJ1c3QucnUvdWMvQ0EtSUlULShLMyktMjAyMC5jcmwwM6AxoC+GLWh0dHA6Ly91YzIuaWl0cnVzdC5ydS91Yy9DQS1JSVQtKEszKS0yMDIwLmNybDCCAV8GA1UdIwSCAVYwggFSgBQUjJy0itpFeAWQ6iOiHvpKiNvwqqGCASykggEoMIIBJDEeMBwGCSqGSIb3DQEJARYPZGl0QG1pbnN2eWF6LnJ1MQswCQYDVQQGEwJSVTEYMBYGA1UECAwPNzcg0JzQvtGB0LrQstCwMRkwFwYDVQQHDBDQsy4g0JzQvtGB0LrQstCwMS4wLAYDVQQJDCXRg9C70LjRhtCwINCi0LLQtdGA0YHQutCw0Y8sINC00L7QvCA3MSwwKgYDVQQKDCPQnNC40L3QutC+0LzRgdCy0Y/Qt9GMINCg0L7RgdGB0LjQuDEYMBYGBSqFA2QBEg0xMDQ3NzAyMDI2NzAxMRowGAYIKoUDA4EDAQESDDAwNzcxMDQ3NDM3NTEsMCoGA1UEAwwj0JzQuNC90LrQvtC80YHQstGP0LfRjCDQoNC+0YHRgdC40LiCChfwveQAAAAAA7cwDAYIKoUDBwEBAwIFAANBAFMWO33peUnRzjZ3QlRW35y7iKqTXHYka/VT+n8t6jjoIIGFUxWEA+KHbjxjBj87ZZRNRHseNOCfpqtJ+cAexoY=</wsse:BinarySecurityToken>\n            <ds:Signature xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\" Id=\"SIG-77cec589-7916-4d32-8e6c-d567850d62b0\">\n                <ds:SignedInfo>\n                    <ds:CanonicalizationMethod Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\">\n                        <ec:InclusiveNamespaces xmlns:ec=\"http://www.w3.org/2001/10/xml-exc-c14n#\" PrefixList=\"soapenv\"/>\n                    </ds:CanonicalizationMethod>\n                    <ds:SignatureMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256\"/>\n                    <ds:Reference URI=\"#id-68f54863-7367-4ea2-8088-ad2ef72608dc\">\n                        <ds:Transforms>\n                            <ds:Transform Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\n                        </ds:Transforms>\n                        <ds:DigestMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256\"/>\n                        <ds:DigestValue>YtjBl4v2R5Ntt0lzXc26BmwrncsWWCqJwAeFJHkdpJk=</ds:DigestValue>\n                    </ds:Reference>\n                </ds:SignedInfo>\n                <ds:SignatureValue>B8lW1Iu50VeNInhUNncOJ8s1zGAonuY91ioNG0+u4t7GwwTRW1kell38XQHh8FUfr8brS+/kaG47rYzAlXAYsw==</ds:SignatureValue>\n                <ds:KeyInfo Id=\"KI-54557d7c-bb19-46d3-a169-0730d84d1019\">\n                    <wsse:SecurityTokenReference wsu:Id=\"STR-4816eb46-1fdb-4528-aa7c-665e0e74159f\">\n                        <wsse:Reference URI=\"#X509-bc720523-1308-4c5b-a7b7-45a235a83227\" ValueType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3\"/>\n                    </wsse:SecurityTokenReference>\n                </ds:KeyInfo>\n            </ds:Signature>\n        </wsse:Security>\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-68f54863-7367-4ea2-8088-ad2ef72608dc\">\n        <GetMOResourceInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Service_Posts>\n                <Post>\n                    <Post_Id>34</Post_Id>\n                </Post>\n            </Service_Posts>\n            <MO_OID_List>\n                <MO_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407</MO_OID>\n            </MO_OID_List>\n            <Referral_Id>63ef5ec8-acb0-4cd3-a829-fbd93a93c705</Referral_Id>\n            <Start_Date_Range>2020-08-27</Start_Date_Range>\n            <End_Date_Range>2020-09-10</End_Date_Range>\n        </GetMOResourceInfoRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetServicePostSpecsInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetServicePostSpecsInfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос перечня должностей медицинских специалистов, доступных гражданину в выбранной МО -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!-- Блок подписи-->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-252995f1-41d4-4dc0-bfad-b4d0b5ec43a8\">\n        <GetServicePostSpecsInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <MO_Id>6741</MO_Id>\n        </GetServicePostSpecsInfoRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetScheduleInfo_Referral_0",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetScheduleInfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:s='http://www.w3.org/2001/XMLSchema' xmlns:wsa='http://www.w3.org/2005/08/addressing'>\n    <SOAP-ENV:Header>\n        <wsa:MessageID>urn:uuid:FD527418-DDCC-11EA-BFA2-0050568D2145</wsa:MessageID>\n    </SOAP-ENV:Header>\n    <SOAP-ENV:Body>\n        <GetScheduleInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Specialist_SNILS>90915936434</Specialist_SNILS>\n            <MO_OID>1.2.643.5.1.13.13.12.2.65.6741.0.156062</MO_OID>\n            <Service_Post>\n                <Post>\n                    <Post_Id>109</Post_Id>\n                </Post>\n            </Service_Post>\n            <Start_Date_Range>2020-08-21</Start_Date_Range>\n            <End_Date_Range>2020-08-28</End_Date_Range>\n            <Start_Time_Range>00:00:00</Start_Time_Range>\n            <End_Time_Range>23:59:00</End_Time_Range>\n        </GetScheduleInfoRequest>\n    </SOAP-ENV:Body>\n</SOAP-ENV:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetScheduleInfo_Referral_1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "GetScheduleInfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:s='http://www.w3.org/2001/XMLSchema' xmlns:wsa='http://www.w3.org/2005/08/addressing'>\n    <SOAP-ENV:Header>\n        <wsa:MessageID>urn:uuid:DBFD101A-D7AB-11EA-BFA2-0050568D2145</wsa:MessageID>\n    </SOAP-ENV:Header>\n    <SOAP-ENV:Body>\n        <GetScheduleInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Specialist_SNILS>17228242963</Specialist_SNILS>\n            <MO_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407</MO_OID>\n            <Service_Post>\n                <Post>\n                    <Post_Id>34</Post_Id>\n                </Post>\n            </Service_Post>\n            <Referral_Id>1670e96a-e078-4393-8eef-9b5796cf3f6b</Referral_Id>\n            <Start_Date_Range>2020-08-06</Start_Date_Range>\n            <End_Date_Range>2020-08-20</End_Date_Range>\n            <Start_Time_Range>00:00:00</Start_Time_Range>\n            <End_Time_Range>23:59:00</End_Time_Range>\n        </GetScheduleInfoRequest>\n    </SOAP-ENV:Body>\n</SOAP-ENV:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetScheduleInfo_Referral_1_Room_OID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"type": "text",
+						"value": "GetScheduleInfo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:s='http://www.w3.org/2001/XMLSchema' xmlns:wsa='http://www.w3.org/2005/08/addressing'>\n    <SOAP-ENV:Header>\n        <wsa:MessageID>urn:uuid:40A87D36-DD1C-11EA-BFA2-0050568D2145</wsa:MessageID>\n    </SOAP-ENV:Header>\n    <SOAP-ENV:Body>\n        <GetScheduleInfoRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Room_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407.11901</Room_OID>\n            <MO_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407</MO_OID>\n            <Service_Specialty>\n                <Specialty_Id>13</Specialty_Id>\n                <Services_Info>\n                    <Complex_Service_Name>Общий анализ крови</Complex_Service_Name>\n                    <Complex_Service_Id>A566.001</Complex_Service_Id>\n                    <Service>\n                        <Service_Id>B03.016.004</Service_Id>\n                    </Service>\n                    <Service>\n                        <Service_Id>A09.05.045</Service_Id>\n                    </Service>\n                </Services_Info>\n            </Service_Specialty>\n            <Referral_Id>4f9e47ec-aea2-4e60-9859-7beab3d1f70a</Referral_Id>\n            <Start_Date_Range>2020-08-13</Start_Date_Range>\n            <End_Date_Range>2020-08-27</End_Date_Range>\n            <Start_Time_Range>00:00:00</Start_Time_Range>\n            <End_Time_Range>23:59:00</End_Time_Range>\n        </GetScheduleInfoRequest>\n    </SOAP-ENV:Body>\n</SOAP-ENV:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAppointment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "CreateAppointment",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос на запись гражданина на прием -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!--Блок подписи -->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-a809c956-b25d-4ac2-9b77-271e15414fa4\">\n        <CreateAppointmentRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>\n            <Slot_Id>5e26e7e4-f64e-4a24-b943-a0f0a25c3028</Slot_Id>\n        </CreateAppointmentRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelAppointment_CANCELED_BY_PATIENT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "CancelAppointment",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос на отмену записи на прием по инициативе пациента -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!--Блок подписи -->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-9494c378-db8f-4ffc-a6bd-d331da27e519\">\n        <CancelAppointmentRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Book_Id_Mis>ff0e078f-de81-454d-8912-81647a81f6e7</Book_Id_Mis>\n            <Canceled_Reason>CANCELED_BY_PATIENT</Canceled_Reason>\n        </CancelAppointmentRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelAppointment_ERROR_DATA_MIS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "CancelAppointment",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос на отмену записи при передаче некорректных данных в ответе CreateAppointmentResponse -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!--Блок подписи -->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-9494c378-db8f-4ffc-a6bd-d331da27e519\">\n        <CancelAppointmentRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Book_Id_Mis>65249896</Book_Id_Mis>\n            <Canceled_Reason>ERROR_DATA_MIS</Canceled_Reason>\n            <Error_Data_Parameters>\n                <Parameter>\n                    <Message>Значение не соответствует переданному в запросе</Message>\n                    <Path>Slot_Id</Path>\n                    <Value>235dff2a-eee0-45f4-bc73-df0e700b69cc</Value>\n                </Parameter>\n                <Parameter>\n                    <Message>Значение не соответствует переданному в запросе </Message>\n                    <Path>Visit_Time</Path>\n                    <Value>2019-07-20T15:00:00+03:00</Value>\n                </Parameter>\n            </Error_Data_Parameters>\n        </CancelAppointmentRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelAppointment_DATA_TRANSFER_ERROR_AT_EPGDATA_TRANSFER_ERROR_AT_EPGU",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "CancelAppointment",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос на отмену записи при ошибке передачи данных о записи на ЕПГУ -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!--Блок подписи -->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-9494c378-db8f-4ffc-a6bd-d331da27e519\">\n        <CancelAppointmentRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Book_Id_Mis>65249896</Book_Id_Mis>\n            <Canceled_Reason>DATA_TRANSFER_ERROR_AT_EPGU</Canceled_Reason>\n        </CancelAppointmentRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelAppointment_RECORD_NOT_CREATED_AT_EPGU",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "CancelAppointment",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Запрос на отмену записи по причине - запись не создана в ИС Пользователя (ошибка создания записи) -->\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n        <!--Блок подписи -->\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-9494c378-db8f-4ffc-a6bd-d331da27e519\">\n        <CancelAppointmentRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Book_Id_Mis>65249896</Book_Id_Mis>\n            <Canceled_Reason>RECORD_NOT_CREATED_AT_EPGU</Canceled_Reason>\n        </CancelAppointmentRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReferralAppointmentInformation_RECORDED",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "ReferralAppointmentInformation",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-a809c956-b25d-4ac2-9b77-271e15414fa4\">\n        <ReferralAppointmentInformationRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Book_Id_Mis>08709845-b17d-465c-8bb7-c1bcfc9f60db</Book_Id_Mis>\n            <Referral_Id>b19c2d5b-85c0-4afa-82f8-df380fc52bb4</Referral_Id>\n            <Appointment_Status>RECORDED</Appointment_Status>\n            <MO_OID>1.2.643.5.1.13.13.12.2.65.15665.0.388000</MO_OID>\n            <MO_Name>Стоматологическая клиника ООО ДА ВИНЧИ ЛАЙН</MO_Name>\n            <Resource_Name>Белова Ольга Александровна</Resource_Name>\n            <Visit_Time>2020-08-20T10:00:00+11:00</Visit_Time>\n        </ReferralAppointmentInformationRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReferralAppointmentInformation_CANCELED",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "ReferralAppointmentInformation",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-a809c956-b25d-4ac2-9b77-271e15414fa4\">\n        <ReferralAppointmentInformationRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Book_Id_Mis>789118d2-6261-4fb0-81c5-71fb875337dd</Book_Id_Mis>\n            <Referral_Id>03d9fad7-4d16-4437-bc48-ed655b2effdb</Referral_Id>\n            <Appointment_Status>CANCELED</Appointment_Status>\n            <MO_OID>1.2.643.5.1.13.13.12.2.65.15665.0.388000</MO_OID>\n            <MO_Name>Стоматологическая клиника ООО ДА ВИНЧИ ЛАЙН</MO_Name>\n            <Resource_Name>Белова Ольга Александровна</Resource_Name>\n            <Visit_Time>2020-08-20T10:00:00+11:00</Visit_Time>\n        </ReferralAppointmentInformationRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReferralAppointmentInformation_SUCCESS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "ReferralAppointmentInformation",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-a809c956-b25d-4ac2-9b77-271e15414fa4\">\n        <ReferralAppointmentInformationRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Book_Id_Mis>61d44fc0-c1e5-47d1-bc4c-c9416287fdc0</Book_Id_Mis>\n            <Referral_Id>2081aca6-7ae2-4915-9cec-7ab0f0e8ce5d</Referral_Id>\n            <Appointment_Status>CANCELED</Appointment_Status>\n            <MO_OID>1.2.643.5.1.13.13.12.2.65.15665.0.388000</MO_OID>\n            <MO_Name>Стоматологическая клиника ООО ДА ВИНЧИ ЛАЙН</MO_Name>\n            <Resource_Name>Белова Ольга Александровна</Resource_Name>\n            <Visit_Time>2020-08-20T10:00:00+11:00</Visit_Time>\n        </ReferralAppointmentInformationRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReferralAppointmentInformation_PATIENT_NOT_ARRIVED",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "ReferralAppointmentInformation",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Header>\n    </soapenv:Header>\n    <soapenv:Body xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"id-a809c956-b25d-4ac2-9b77-271e15414fa4\">\n        <ReferralAppointmentInformationRequest xmlns=\"http://www.rt-eu.ru/med/er/v2_0\">\n            <Book_Id_Mis>e77d92b0-7396-46f5-bccd-31faea09abf1</Book_Id_Mis>\n            <Referral_Id>4bdb4348-fba8-4261-ba13-ae052c7d0339</Referral_Id>\n            <Appointment_Status>PATIENT_NOT_ARRIVED</Appointment_Status>\n            <MO_OID>1.2.643.5.1.13.13.12.2.65.15665.0.388000</MO_OID>\n            <MO_Name>Стоматологическая клиника ООО ДА ВИНЧИ ЛАЙН</MO_Name>\n            <Resource_Name>Белова Ольга Александровна</Resource_Name>\n            <Visit_Time>2020-08-20T10:00:00+11:00</Visit_Time>\n        </ReferralAppointmentInformationRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAppointmentStatusRequest_01",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "UpdateAppointmentStatus",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:er=\"http://www.rt-eu.ru/med/er/v2_0\">\n    <soapenv:Header></soapenv:Header>\n    <soapenv:Body>\n        <er:UpdateAppointmentStatusRequest>\n            <er:Rmis_Id>conc-50349-rmis</er:Rmis_Id>\n            <er:Book_Id_Mis>bdb5ea66-d1ea-4a39-b033-54e9194de941</er:Book_Id_Mis>\n            <er:Visit_Time>2020-08-11T11:00:00+11:00</er:Visit_Time>\n            <er:Status>RECORDED</er:Status>\n            <er:Book_Data>\n                <er:MO>\n                    <er:MO_Id>6747</er:MO_Id>\n                    <er:MO_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407</er:MO_OID>\n                    <er:MO_Name>Амбулатория Хомутово, Городская поликлиника № 4 г.Южно-Сахалинск</er:MO_Name>\n                </er:MO>\n                <er:Room>\n                    <er:Room_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407.11504</er:Room_OID>\n                    <er:Room_Name>Кабинет узиста</er:Room_Name>\n                </er:Room>\n                <er:Specialty_Id>33</er:Specialty_Id>\n                <er:Services_Info>\n                    <er:Complex_Service_Name>Набор услуг для исследования горла</er:Complex_Service_Name>\n                    <er:Complex_Service_Id>COMPLEX_A0408</er:Complex_Service_Id>\n                    <er:Service>\n                        <er:Service_Id>A04.08.004</er:Service_Id>\n                    </er:Service>\n                    <er:Service>\n                        <er:Service_Id>A04.08.002</er:Service_Id>\n                    </er:Service>\n                </er:Services_Info>\n                <er:Source_Code>RPGU</er:Source_Code>\n                <er:Appointment_Type>PRIMARY</er:Appointment_Type>\n                <er:Appointment_Reason>PROPHYLACTIC</er:Appointment_Reason>\n                <er:Payment_Source_Id>1</er:Payment_Source_Id>\n                <er:Patient>\n                    <er:Age>33</er:Age>\n                    <er:Is_Villager>false</er:Is_Villager>\n                </er:Patient>\n            </er:Book_Data>\n        </er:UpdateAppointmentStatusRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_update}}",
+					"host": [
+						"{{url_update}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAppointmentStatusRequest_01 Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "UpdateAppointmentStatus",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:er=\"http://www.rt-eu.ru/med/er/v2_0\">\n    <soapenv:Header></soapenv:Header>\n    <soapenv:Body>\n        <er:UpdateAppointmentStatusRequest>\n            <er:Rmis_Id>conc-50349-rmis</er:Rmis_Id>\n            <er:Book_Id_Mis>26d70be8-5a96-4264-bded-d04b5b315f3c</er:Book_Id_Mis>\n            <er:Visit_Time>2020-08-13T08:00:00+11:00</er:Visit_Time>\n            <er:Status>CANCELED</er:Status>\n            <er:Book_Data>\n                <er:MO>\n                    <er:MO_Id>6747</er:MO_Id>\n                    <er:MO_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407</er:MO_OID>\n                    <er:MO_Name>Амбулатория Хомутово, Городская поликлиника № 4 г.Южно-Сахалинск</er:MO_Name>\n                </er:MO>\n                <er:Room>\n                    <er:Room_OID>1.2.643.5.1.13.13.12.2.65.6747.0.6407.11901</er:Room_OID>\n                    <er:Room_Name>Кабинет процедурный</er:Room_Name>\n                </er:Room>\n                <er:Specialty_Id>13</er:Specialty_Id>\n                <er:Services_Info>\n                    <er:Service>\n                        <er:Service_Id>B03.016.004</er:Service_Id>\n                    </er:Service>\n                </er:Services_Info>\n                <er:Source_Code>EPGU</er:Source_Code>\n                <er:Appointment_Type>PRIMARY</er:Appointment_Type>\n                <er:Appointment_Reason>ILLNESS</er:Appointment_Reason>\n                <er:Payment_Source_Id>1</er:Payment_Source_Id>\n                <er:Patient>\n                    <er:Age>33</er:Age>\n                    <er:Is_Villager>false</er:Is_Villager>\n                </er:Patient>\n            </er:Book_Data>\n        </er:UpdateAppointmentStatusRequest>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_update}}",
+					"host": [
+						"{{url_update}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

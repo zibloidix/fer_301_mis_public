@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:er="http://www.rt-eu.ru/med/er/v2_0">
+    <soapenv:Header></soapenv:Header>
+    <soapenv:Body>
+        <er:UpdateAppointmentStatusRequest>
+            <er:Rmis_Id>conc-50349-rmis</er:Rmis_Id>
+            <er:Book_Id_Mis>{{slot.book_id_mis}}</er:Book_Id_Mis>
+            <er:Visit_Time>{{slot.visittime}}</er:Visit_Time>
+            <er:Status>{{appointment_status}}</er:Status>
+            <er:Book_Data>
+                <er:MO>
+                    <er:MO_Id>{{hospital._id}}</er:MO_Id>
+                    <er:MO_OID>{{hospital.oid}}</er:MO_OID>
+                    <er:MO_Name>{{hospital.name}}</er:MO_Name>
+                </er:MO>
+                {{#if room}}
+                <er:Room>
+                    <er:Room_OID>{{room.oid}}</er:Room_OID>
+                    <er:Room_Name>{{room.name}}</er:Room_Name>
+                </er:Room>
+                {{else}}
+                <er:Specialist>
+                    <er:Last_Name>{{doctor.last_name}}</er:Last_Name>
+                    <er:First_Name>{{doctor.first_name}}</er:First_Name>
+                    <er:Middle_Name>{{doctor.middle_name}}</er:Middle_Name>
+                    <er:SNILS>{{doctor.snils}}</er:SNILS>
+                    <er:Post>
+                        <er:Post_Id>{{doctor.post_id}}</er:Post_Id>
+                    </er:Post>
+                </er:Specialist>
+                {{/if}}
+                <er:Specialty_Id>{{doctor.specialty_id}}</er:Specialty_Id>
+                <er:Services_Info>
+                    {{#if doctor.complex_service}}
+                    <er:Complex_Service_Name>{{doctor.complex_service.name}}</er:Complex_Service_Name>
+                    <er:Complex_Service_Id>{{doctor.complex_service._id}}</er:Complex_Service_Id>
+                    {{/if}}
+                    {{#each services}}
+                    <er:Service>
+                        <er:Service_Id>{{_id}}</er:Service_Id>
+                        {{#if inner}}
+                        <er:Add_Info_Service>
+                              <er:Inner_Id>{{inner._id}}</er:Inner_Id>
+                              <er:Inner_Name>{{inner.name}}</er:Inner_Name>
+                        </er:Add_Info_Service>
+                        {{/if}}
+                    </er:Service>
+                    {{/each}}
+                </er:Services_Info>
+                <er:Source_Code>{{source_code}}</er:Source_Code>
+                <er:Appointment_Type>{{appointment_type}}</er:Appointment_Type>
+                <er:Appointment_Reason>{{appointment_reason}}</er:Appointment_Reason>
+                <er:Payment_Source_Id>{{payment_source_id}}</er:Payment_Source_Id>
+                <er:Patient>
+                    <er:Age>33</er:Age>
+                    <er:Is_Villager>false</er:Is_Villager>
+                </er:Patient>
+            </er:Book_Data>
+        </er:UpdateAppointmentStatusRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

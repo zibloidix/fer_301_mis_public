@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetPatientInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>413f9340-91be-11e9-ba04-005056b1f66d</Session_ID>
+            <Patient_Id>78541412</Patient_Id>
+            <Referrals>
+                <!--Пример 1. Направление на консультацию к специалисту -->
+                <Referral>
+                    <Referral_Id>147852</Referral_Id>
+                    <Referral_Number>15</Referral_Number>
+                    <Referral_Type>6</Referral_Type>
+                    <Referral_Start_Date>2019-06-01</Referral_Start_Date>
+                    <Referral_End_Date>2019-09-01</Referral_End_Date>
+                    <Payment_Source_Id>1</Payment_Source_Id>
+                    <To_MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</To_MO_OID>
+                    <To_Service_Post>
+                        <!--врач-кардиолог-->
+                        <Post>
+                            <Post_Id>34</Post_Id>
+                        </Post>
+                    </To_Service_Post>
+                    <To_Resource_Name>Добрынина Анна Ивановна</To_Resource_Name>
+                    <To_Resource_Snils>00000000000</To_Resource_Snils>
+                    <Desease>H83</Desease>
+                    <Note>Нарушения слуха</Note>
+                    <From_MO_OID>1.2.643.5.1.13.13.12.2.59.10097.0.273023</From_MO_OID>
+                    <From_Post>
+                        <Post_Id>109</Post_Id>
+                    </From_Post>
+                    <From_Resource_Name>Иванов Петр Иванович</From_Resource_Name>
+                    <From_Resource_Snils>00000000003</From_Resource_Snils>
+                    <Available_Record>AVAILABLE</Available_Record>
+                </Referral>
+                <!--Пример 2. Направление на консультацию к специалисту с узкой специализацией-->
+                <Referral>
+                    <Referral_Id>147855</Referral_Id>
+                    <Referral_Number>17</Referral_Number>
+                    <Referral_Type>6</Referral_Type>
+                    <Referral_Start_Date>2019-05-27</Referral_Start_Date>
+                    <Referral_End_Date>2019-07-30</Referral_End_Date>
+                    <Payment_Source_Id>1</Payment_Source_Id>
+                    <To_MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</To_MO_OID>
+                    <To_Service_Post>
+                        <!--врач-невролог-->
+                        <Post>
+                            <Post_Id>45</Post_Id>
+                            <Add_Info_Post>
+                                <Inner_Id>45_098</Inner_Id>
+                                <Inner_Name>врач-вертеброневролог</Inner_Name>
+                            </Add_Info_Post>
+                        </Post>
+                    </To_Service_Post>
+                    <Note>Систематические боли в шее</Note>
+                    <From_MO_OID>1.2.643.5.1.13.13.12.2.59.10097.0.273023</From_MO_OID>
+                    <From_Post>
+                        <Post_Id>109</Post_Id>
+                    </From_Post>
+                    <From_Resource_Name>Иванов Петр Иванович</From_Resource_Name>
+                    <From_Resource_Snils>00000000003</From_Resource_Snils>
+                    <Available_Record>AVAILABLE</Available_Record>
+                </Referral>
+                <!--Пример 3. Направление на услугу, оказываемую в отделениях диагностики-->
+                <Referral>
+                    <Referral_Id>1479078</Referral_Id>
+                    <Referral_Number>1456</Referral_Number>
+                    <Referral_Type>4</Referral_Type>
+                    <Referral_Start_Date>2019-06-01</Referral_Start_Date>
+                    <Referral_End_Date>2019-09-30</Referral_End_Date>
+                    <Payment_Source_Id>1</Payment_Source_Id>
+                    <To_MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</To_MO_OID>
+                    <!--Вместо должности указывается специальность-->
+                    <To_Service_Specialty>
+                        <!--Функциональная диагностика-->
+                        <Specialty_Id>35</Specialty_Id>
+                        <!--Информация об оказываемой услуге-->
+                        <Services_Info>
+                            <!--Компьютерная томография надпочечников-->
+                            <Service>
+                                <Service_Id>A06.22.002</Service_Id>
+                            </Service>
+                        </Services_Info>
+                    </To_Service_Specialty>
+                    <Note>Обследование</Note>
+                    <From_MO_OID>1.2.643.5.1.13.13.12.2.59.10097.0.273023</From_MO_OID>
+                    <From_Post>
+                        <Post_Id>109</Post_Id>
+                    </From_Post>
+                    <From_Resource_Name>Семенова Алиса Ивановна</From_Resource_Name>
+                    <From_Resource_Snils>00000000090</From_Resource_Snils>
+                    <Available_Record>AVAILABLE</Available_Record>
+                </Referral>
+                <!--Пример 4. Направление на услуги, оказываемые в отделениях диагностики, оказание которых, производится на одном приеме-->
+                <Referral>
+                    <Referral_Id>1478798</Referral_Id>
+                    <Referral_Number>1055</Referral_Number>
+                    <Referral_Type>4</Referral_Type>
+                    <Referral_Start_Date>2019-06-01</Referral_Start_Date>
+                    <Referral_End_Date>2019-07-30</Referral_End_Date>
+                    <Payment_Source_Id>1</Payment_Source_Id>
+                    <To_MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</To_MO_OID>
+                    <!--Вместо должности указывается специальность-->
+                    <To_Service_Specialty>
+                        <!--Клиническая лабораторная диагностика-->
+                        <Specialty_Id>13</Specialty_Id>
+                        <!--Информация об оказываемой услуге-->
+                        <Services_Info>
+                            <!--Название услуги, выводимой пользователю. Должно быть обязательно заполнено, если Service> 1 . 
+                                Если Service = 1, то гражданину отображается название услуги из справочника "Номенклатура медицинских услуг"-->
+                            <Complex_Service_Name>Общий анализ крови</Complex_Service_Name>
+                            <Complex_Service_Id>A566.001</Complex_Service_Id>
+                            <!--Пациент направлен на две услуги-->
+                            <Service>
+                                <Service_Id>B03.016.004</Service_Id>
+                            </Service>
+                            <Service>
+                                <Service_Id>A09.05.045</Service_Id>
+                            </Service>
+                        </Services_Info>
+                    </To_Service_Specialty>
+                    <Note>Обследование</Note>
+                    <From_MO_OID>1.2.643.5.1.13.13.12.2.59.10097.0.273023</From_MO_OID>
+                    <From_Post>
+                        <Post_Id>109</Post_Id>
+                    </From_Post>
+                    <From_Resource_Name>Купринова Анна Ивановна</From_Resource_Name>
+                    <From_Resource_Snils>00000000015</From_Resource_Snils>
+                    <Available_Record>AVAILABLE</Available_Record>
+                </Referral>
+                
+                <!--Пример 5. Направление не предусматривает самостоятельную запись в связи с условиями оказания услуги-->
+                <Referral>
+                    <Referral_Id>147925</Referral_Id>
+                    <Referral_Number>1565</Referral_Number>
+                    <Referral_Type>4</Referral_Type>
+                    <Referral_Start_Date>2019-06-30</Referral_Start_Date>
+                    <Referral_End_Date>2019-09-30</Referral_End_Date>
+                    <Payment_Source_Id>1</Payment_Source_Id>
+                    <To_MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</To_MO_OID>
+                    <!--Вместо должности указывается специальность-->
+                    <To_Service_Specialty>
+                        <!--Клиническая лабораторная диагностика-->
+                        <Specialty_Id>13</Specialty_Id>
+                        <!--Информация об оказываемой услуге-->
+                        <Services_Info>
+                            <!--Исследование мочи методом Нечипоренко-->
+                            <Service>
+                                <Service_Id>B03.016.014</Service_Id>
+                            </Service>
+                        </Services_Info>
+                    </To_Service_Specialty>
+                    <Note>Обследование</Note>
+                    <From_MO_OID>1.2.643.5.1.13.13.12.2.59.10097.0.273023</From_MO_OID>
+                    <From_Post>
+                        <Post_Id>109</Post_Id>
+                    </From_Post>
+                    <From_Resource_Name>Семенова Алиса Ивановна</From_Resource_Name>
+                    <From_Resource_Snils>00000000090</From_Resource_Snils>
+                    <Available_Record>NO_APPOINTMENT</Available_Record>
+                    <Reason_Not_Available>Необходимо подойти по месту оказания услуги, услуга оказывается без записи</Reason_Not_Available>
+                </Referral>
+                <!--Пример 6. Направление на услугу, отсутствующую в номенклаторе услуг-->
+                <Referral>
+                    <Referral_Id>147999</Referral_Id>
+                    <Referral_Number>1589</Referral_Number>
+                    <Referral_Type>4</Referral_Type>
+                    <Referral_Start_Date>2019-06-30</Referral_Start_Date>
+                    <Referral_End_Date>2019-09-30</Referral_End_Date>
+                    <Payment_Source_Id>1</Payment_Source_Id>
+                    <To_MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</To_MO_OID>
+                    <To_Service_Specialty>
+                        <!--Функциональная диагностика-->
+                        <Specialty_Id>35</Specialty_Id>
+                        <!--Информация об оказываемой услуге, отсутствующей в справочнике-->
+                        <Services_Info>
+                            <Service>
+                                <!--Эхокардиография (имеется в справочнике)-->
+                                <Service_Id>A04.10.002</Service_Id>
+                                <!-- Эхокардиография с допплерографией (отсутствует в справочнике)-->
+                                <Add_Info_Service>
+                                    <Inner_Id>A04.10.002.010</Inner_Id>
+                                    <Inner_Name>Эхокардиография с допплерографией</Inner_Name>
+                                </Add_Info_Service>
+                            </Service>
+                        </Services_Info>
+                    </To_Service_Specialty>
+                    <Note>Обследование</Note>
+                    <From_MO_OID>1.2.643.5.1.13.13.12.2.59.10097.0.273023</From_MO_OID>
+                    <From_Post>
+                        <Post_Id>34</Post_Id>
+                    </From_Post>
+                    <From_Resource_Name>Пушнина Любовь Аркадьевна</From_Resource_Name>
+                    <From_Resource_Snils>00000000094</From_Resource_Snils>
+                    <Available_Record>AVAILABLE</Available_Record>
+                </Referral>
+            </Referrals>
+        </GetPatientInfoResponse>
+    </soap:Body>
+</soap:Envelope>

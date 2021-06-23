@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <CreateAppointmentResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <Book_Id_Mis/>
+            <Status>
+                <Status_Code>APPOINT_VISIT_TIME_HAS_PASSED</Status_Code>
+                <Comment>Извините, запись невозможна. Время начала приема уже прошло. Выберите другое время</Comment>
+            </Status>
+            <Slot_Id>ec8449e4-bbf8-4a5b-856f-d439f02dbf11</Slot_Id>
+            <Visit_Time>2020-12-01T08:00:00+11:00</Visit_Time>
+        </CreateAppointmentResponse>
+    </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ответ в случае успешной отмены записи -->
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <CancelAppointmentResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Book_Id_Mis>{{book_id_mis}}</Book_Id_Mis>
+            <Status_Code>SUCCESS</Status_Code>
+            <Comment>Успешное завершение операции</Comment>
+        </CancelAppointmentResponse>
+    </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetMOInfoExtendedResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>1291473c-91cb-11e9-892c-005056b1f66d</Session_ID>
+            <MO_List>
+                <MO>
+                    <MO_Id>554</MO_Id>
+                    <MO_OID>1.2.643.5.1.13.13.12.2.2.51.0.31067</MO_OID>
+                    <MO_Name>Поликлиническое отделение 1, ГБУЗ РБ ГБ г.Нефтекамск</MO_Name>
+                    <MO_Address>БАШКОРТОСТАН РЕСП, Г. НЕФТЕКАМСК, ул.  ПАРКОВАЯ, д. 31</MO_Address>
+                    <MO_Phone>834783-71331</MO_Phone>
+                    <Age_Group>ADULT</Age_Group>
+                </MO>
+                <MO>
+                    <MO_Id>1452</MO_Id>
+                    <MO_OID>1.2.643.5.1.13.13.12.2.2.51.0.31468</MO_OID>
+                    <MO_Name>Женская консультация, ГБУЗ РБ ГБ г.Нефтекамск</MO_Name>
+                    <MO_Address>452687, БАШКОРТОСТАН РЕСП, Г. НЕФТЕКАМСК, ул.  ПАРКОВАЯ, д. 31</MO_Address>
+                    <MO_Phone>83478374313</MO_Phone>
+                    <Age_Group>ALL</Age_Group>
+                </MO>
+                <MO>
+                    <MO_Id>1014</MO_Id>
+                    <MO_OID>1.2.643.5.1.13.13.12.2.2.51.0.31097</MO_OID>
+                    <MO_Name>Поликлиническое отделение 2, ГБУЗ РБ ГБ г.Нефтекамск</MO_Name>
+                    <MO_Address>452681, БАШКОРТОСТАН РЕСП, Г. НЕФТЕКАМСК, ул.  ТРАКТОВАЯ, д. 8</MO_Address>
+                    <MO_Phone>834783-25508</MO_Phone>
+                    <Age_Group>CHILD, TEEN</Age_Group>
+                </MO>
+                <MO>
+                    <MO_Id>1021</MO_Id>
+                    <MO_OID>1.2.643.5.1.13.13.12.2.2.51.0.31273</MO_OID>
+                    <MO_Name>Поликлиническое отделение 5, ГБУЗ РБ ГБ г.Нефтекамск</MO_Name>
+                    <MO_Address>452697, БАШКОРТОСТАН РЕСП, Г. НЕФТЕКАМСК, ул.  ВЫСОКОВОЛЬТНАЯ, д. 3</MO_Address>
+                    <MO_Phone>834783-64304</MO_Phone>
+                    <Age_Group>ALL</Age_Group>
+                </MO>
+            </MO_List>
+        </GetMOInfoExtendedResponse>
+    </soap:Body>
+</soap:Envelope>

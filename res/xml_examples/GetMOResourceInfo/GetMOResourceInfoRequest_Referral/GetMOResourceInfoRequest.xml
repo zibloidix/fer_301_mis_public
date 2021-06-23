@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <!-- Блок подписи-->
+    </soapenv:Header>
+    <soapenv:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-6759ff3f-d0ea-4d5c-b05c-4a27d4fa2321">
+        <GetMOResourceInfoRequest xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>413f9340-91be-11e9-ba04-005056b1f66d</Session_ID>
+            <Service_Specialty>
+                <!--Функциональная диагностика-->
+                <Specialty_Id>35</Specialty_Id>
+                <!--Информация об оказываемой услуге, отсутствующей в справочнике-->
+                <Services_Info>
+                    <!-- Эхокардиография с допплерографией (отсутствует в справочнике)-->
+                    <Service>
+                        <Service_Id>A04.10.002</Service_Id>
+                        <!--Услуга отсутствует в справочнике-->
+                        <Add_Info_Service>
+                            <Inner_Id>A04.10.002.010</Inner_Id>
+                            <Inner_Name>Эхокардиография с допплерографией</Inner_Name>
+                        </Add_Info_Service>
+                    </Service>
+                </Services_Info>
+            </Service_Specialty>
+            <MO_OID_List>
+                <MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.350250</MO_OID>
+            </MO_OID_List>
+            <Referral_Id>147999</Referral_Id>
+            <Start_Date_Range>2019-06-19</Start_Date_Range>
+            <End_Date_Range>2019-07-03</End_Date_Range>
+        </GetMOResourceInfoRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

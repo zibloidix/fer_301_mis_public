@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetPatientInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <Patient_Id>{{patient_id}}</Patient_Id>
+            {{#if referrals.length}}
+            <Referrals>
+                {{#each referrals}}
+                <Referral>
+                    <Referral_Id>{{_id}}</Referral_Id>
+                    <Referral_Number>{{number}}</Referral_Number>
+                    <Referral_Type>{{type}}</Referral_Type>
+                    <Referral_Start_Date>{{start_date}}</Referral_Start_Date>
+                    <Referral_End_Date>{{end_date}}</Referral_End_Date>
+                    <Payment_Source_Id>{{payment_source_id}}</Payment_Source_Id>
+                    <To_MO_OID>{{to_mo_oid}}</To_MO_OID>
+                    {{#if toResource}}
+                    <To_Service_Post>
+                        <Post>
+                            <Post_Id>{{toResource.post_id}}</Post_Id>
+                            {{#if toResource.add_info_post}}
+                            <Add_Info_Post>
+                                <Inner_Id>{{toResource.inner_id}}</Inner_Id>
+                                <Inner_Name>{{toResource.inner_name}}</Inner_Name>
+                            </Add_Info_Post>
+                            {{/if}}
+                        </Post>
+                    </To_Service_Post>
+                    <To_Resource_Name>{{toResource.last_name}} {{toResource.first_name}} {{toResource.middle_name}}</To_Resource_Name>
+                    <To_Resource_Snils>{{toResource.snils}}</To_Resource_Snils>
+                    {{/if}}
+                    {{#if to_service_specialty}}
+                    <To_Service_Specialty>
+                        <Specialty_Id>{{to_service_specialty.specialty_id}}</Specialty_Id>
+                        <Services_Info>
+                            {{#if to_service_specialty.services_info.complex_service}}
+                            <Complex_Service_Name>{{to_service_specialty.services_info.complex_service.name}}</Complex_Service_Name>
+                            <Complex_Service_Id>{{to_service_specialty.services_info.complex_service._id}}</Complex_Service_Id>
+                            {{/if}}
+                            {{#each to_service_specialty.services_info.services}}
+                            <Service>
+                                <Service_Id>{{_id}}</Service_Id>
+                                {{#if add_info_service}}
+                                <Add_Info_Service>
+                                    <Inner_Id>{{add_info_service._id}}</Inner_Id>
+                                    <Inner_Name>{{add_info_service.name}}</Inner_Name>
+                                </Add_Info_Service>
+                                {{/if}}
+                            </Service>
+                            {{/each}}
+                        </Services_Info>
+                    </To_Service_Specialty>
+                    {{/if}}
+                    {{#if desease}}
+                    <Desease>{{desease}}</Desease>
+                    {{/if}}
+                    <Note>{{note}}</Note>
+                    <From_MO_OID>{{from_mo_oid}}</From_MO_OID>
+                    <From_Post>
+                        <Post_Id>{{fromResource.post_id}}</Post_Id>
+                    </From_Post>
+                    <From_Resource_Name>{{fromResource.last_name}} {{fromResource.first_name}} {{fromResource.middle_name}}</From_Resource_Name>
+                    <From_Resource_Snils>{{fromResource.snils}}</From_Resource_Snils>
+                    <Available_Record>{{available_record}}</Available_Record>
+                    {{#if reason_not_available}}
+                    <Reason_Not_Available>{{reason_not_available}}</Reason_Not_Available>
+                    {{/if}}
+                </Referral>
+                {{/each}}
+            </Referrals>
+            {{/if}}
+        </GetPatientInfoResponse>
+    </soap:Body>
+</soap:Envelope>

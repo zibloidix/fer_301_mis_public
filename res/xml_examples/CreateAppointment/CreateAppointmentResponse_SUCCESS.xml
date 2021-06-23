@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <CreateAppointmentResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>30849258-b880-11e9-9a96-005056b17475</Session_ID>
+            <Book_Id_Mis>baed91e3-488f-4cfc-a8d6-ddd1c33457fd</Book_Id_Mis>
+            <Status>
+                <Status_Code>SUCCESS</Status_Code>
+                <Comment>Запись выполнена успешно</Comment>
+            </Status>      
+            <Slot_Id>adeaf34a-4c4e-4ee8-a089-66b4295ef900</Slot_Id>
+            <Visit_Time>2019-07-20T17:00:00+03:00</Visit_Time>
+            <Room>10</Room>
+        </CreateAppointmentResponse>
+    </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,272 @@
+name: 'default.conf.yml'
+useDefaultYamlConfig: true
+operations:
+  - name: 'GetPatientInfo'
+    request: 'GetPatientInfoRequest'
+    response: 'GetPatientInfoResponse'
+    rules: 
+      - id: 'GetPatientInfoResponseReferal0'
+        description: 'Стандартный ответ при referal = 0'
+        path: 'get-patient-info/responses/get-patient-info-response-referal-0.xml'
+        isActive: true
+        isError: false
+      - id: 'GetPatientInfoResponseReferal1'
+        description: 'Стандартный ответ при referal = 1'
+        path: 'get-patient-info/responses/get-patient-info-response-referal-1.xml'
+        isActive: false
+        isError: false
+      - id: 'GetPatientInfoResponseError_PATIENT_NOT_FOUND'
+        description: 'Ошибка PATIENT_NOT_FOUND'
+        path: 'get-patient-info/responses/ERROR_PATIENT_NOT_FOUND.xml'
+        isActive: false
+        isError: true
+      - id: 'GetPatientInfoResponseError_INTERNAL_ERROR'
+        description: 'Ошибка INTERNAL_ERROR'
+        path: 'get-patient-info/responses/ERROR_INTERNAL_ERROR.xml'
+        isActive: false
+        isError: true
+      - id: 'GetPatientInfoResponseError_SESSION_TIMED_OUT'
+        description: 'Ошибка SESSION_TIMED_OUT'
+        path: 'get-patient-info/responses/ERROR_SESSION_TIMED_OUT.xml'
+        isActive: false
+        isError: true
+  - name: 'GetReferralInfo'
+    request: 'GetReferralInfoRequest'
+    response: 'GetReferralInfoResponse'
+    rules:
+      - id: 'GetReferralInfoResponse'
+        description: 'Стандартный ответ'
+        path: 'get-referral-info/responses/get-referral-info-response.xml'
+        isActive: true
+        isError: false
+      - id: 'GetReferralInfoResponseError_PATIENT_NOT_FOUND'
+        description: 'Ошибка PATIENT_NOT_FOUND'
+        path: 'get-referral-info/responses/ERROR_PATIENT_NOT_FOUND.xml'
+        isActive: false
+        isError: true
+      - id: 'GetReferralInfoResponseError_PATIENT_NOT_FOUND'
+        description: 'Ошибка INTERNAL_ERROR'
+        path: 'get-referral-info/responses/ERROR_INTERNAL_ERROR.xml'
+        isActive: false
+        isError: true
+      - id: 'GetReferralInfoResponseError_SESSION_TIMED_OUT'
+        description: 'Ошибка SESSION_TIMED_OUT'
+        path: 'get-referral-info/responses/ERROR_SESSION_TIMED_OUT.xml'
+        isActive: false
+        isError: true
+      - id: 'GetReferralInfoResponseError_REFERRAL_NOT_FOUND'
+        description: 'Ошибка REFERRAL_NOT_FOUND'
+        path: 'get-referral-info/responses/ERROR_REFERRAL_NOT_FOUND.xml'
+        isActive: false
+        isError: true
+      - id: 'GetReferralInfoResponseError_REFERRAL_PERIOD_HAS_EXPIRED'
+        description: 'Ошибка REFERRAL_PERIOD_HAS_EXPIRED'
+        path: 'get-referral-info/responses/ERROR_REFERRAL_PERIOD_HAS_EXPIRED.xml'
+        isActive: false
+        isError: true
+      - id: 'GetReferralInfoResponseError_MO_NOT_CONNECTED_REFERRAL'
+        description: 'Ошибка MO_NOT_CONNECTED_REFERRAL'
+        path: 'get-referral-info/responses/ERROR_MO_NOT_CONNECTED_REFERRAL.xml'
+        isActive: false
+        isError: true
+      - id: 'GetReferralInfoResponseError_UNDEFINED_ERROR'
+        description: 'Ошибка UNDEFINED_ERROR'
+        path: 'get-referral-info/responses/ERROR_UNDEFINED_ERROR.xml'
+        isActive: false
+        isError: true
+      - id: 'GetReferralInfoResponseError_APPOINT_PATIENT_REGISTERED_SPECIALIST'
+        description: 'Ошибка APPOINT_PATIENT_REGISTERED_SPECIALIST'
+        path: 'get-referral-info/responses/ERROR_APPOINT_PATIENT_REGISTERED_SPECIALIST.xml'
+        isActive: false
+        isError: true
+  - name: 'GetMOInfoExtended'
+    request: 'GetMOInfoExtendedRequest'
+    response: 'GetMOInfoExtendedResponse'
+    rules: 
+      - id: 'GetMOInfoExtendedResponse'
+        description: 'Стандартный ответ'
+        path: 'get-mo-info-extended/responses/get-mo-info-extended-response.xml'
+        isActive: true
+        isError: false
+      - id: 'GetMOInfoExtendedResponseError_ERROR_INTERNAL_ERROR'
+        description: 'Ошибка INTERNAL_ERROR'
+        path: 'get-mo-info-extended/responses/ERROR_INTERNAL_ERROR.xml'
+        isActive: false
+        isError: true
+      - id: 'GetMOInfoExtendedResponseError_ERROR_NO_DATA_FOUND'
+        description: 'Ошибка ERROR_NO_DATA_FOUND'
+        path: 'get-mo-info-extended/responses/ERROR_NO_DATA_FOUND.xml'
+        isActive: false
+        isError: true
+      - id: 'GetMOInfoExtendedResponseError_ERROR_SESSION_TIMED_OUT'
+        description: 'Ошибка ERROR_SESSION_TIMED_OUT'
+        path: 'get-mo-info-extended/responses/ERROR_SESSION_TIMED_OUT.xml'
+        isActive: false
+        isError: true
+  - name: 'GetMOResourceInfo'
+    request: 'GetMOResourceInfoRequest'
+    response: 'GetMOResourceInfoResponse'
+    rules: 
+      - id: 'GetMOResourceInfoResponseSpecialist'
+        description: 'Ответ с перечнем ресурсов - специалистов'
+        path: 'get-mo-resource-info/responses/get-mo-resource-info-response-specialist.xml'
+        isActive: true
+        isError: false
+      - id: 'GetMOResourceInfoResponseRoom'
+        description: 'Ответ с перечнем ресурсов - специалистов'
+        path: 'get-mo-resource-info/responses/get-mo-resource-info-response-room.xml'
+        isActive: true
+        isError: false
+      - id: 'GetMOResourceInfoResponseError_ERROR_INTERNAL_ERROR'
+        description: 'Ошибка ERROR_INTERNAL_ERROR'
+        path: 'get-mo-info-extended/responses/ERROR_INTERNAL_ERROR.xml'
+        isActive: false
+        isError: true
+      - id: 'GetMOResourceInfoResponseError_ERROR_NO_DATA_FOUND'
+        description: 'Ошибка ERROR_NO_DATA_FOUND'
+        path: 'get-mo-info-extended/responses/ERROR_NO_DATA_FOUND.xml'
+        isActive: false
+        isError: true
+      - id: 'GetMOResourceInfoResponseError_ERROR_SESSION_TIMED_OUT'
+        description: 'Ошибка ERROR_SESSION_TIMED_OUT'
+        path: 'get-mo-info-extended/responses/ERROR_SESSION_TIMED_OUT.xml'
+        isActive: false
+        isError: true
+  - name: 'GetServicePostSpecsInfo'
+    request: 'GetServicePostSpecsInfoRequest'
+    response: 'GetServicePostSpecsInfoResponse'
+    rules: 
+      - id: 'GetServicePostSpecsInfoResponse'
+        description: 'Ответ с перечнем должностей медицинских специалистов'
+        path: 'get-service-post-specs-info/responses/get-service-post-specs-info-response.xml'
+        isActive: true
+        isError: false
+      - id: 'GetServicePostSpecsInfoResponseError_ERROR_INTERNAL_ERROR'
+        description: 'Ошибка ERROR_INTERNAL_ERROR'
+        path: 'get-service-post-specs-info/responses/ERROR_INTERNAL_ERROR.xml'
+        isActive: false
+        isError: true
+      - id: 'GetServicePostSpecsInfoResponseError_ERROR_NO_DATA_FOUND'
+        description: 'Ошибка ERROR_NO_DATA_FOUND'
+        path: 'get-service-post-specs-info/responses/ERROR_NO_DATA_FOUND.xml'
+        isActive: false
+        isError: true
+      - id: 'GetServicePostSpecsInfoResponseError_ERROR_SESSION_TIMED_OUT'
+        description: 'Ошибка ERROR_SESSION_TIMED_OUT'
+        path: 'get-service-post-specs-info/responses/ERROR_SESSION_TIMED_OUT.xml'
+        isActive: false
+        isError: true
+  - name: 'GetScheduleInfo'
+    request: 'GetScheduleInfoRequest'
+    response: 'GetScheduleInfoResponse'
+    rules: 
+      - id: 'GetScheduleInfoResponse'
+        description: 'Ответ с информацией о свободных слотах для записи к врачу'
+        path: 'get-schedule-info/responses/get-schedule-info-response.xml'
+        isActive: true
+        isError: false
+      - id: 'GetScheduleInfoResponseError_ERROR_INTERNAL_ERROR'
+        description: 'Ошибка ERROR_INTERNAL_ERROR'
+        path: 'get-schedule-info/responses/ERROR_INTERNAL_ERROR.xml'
+        isActive: false
+        isError: true
+      - id: 'GetScheduleInfoResponseError_ERROR_NO_DATA_FOUND'
+        description: 'Ошибка ERROR_NO_DATA_FOUND'
+        path: 'get-schedule-info/responses/ERROR_NO_DATA_FOUND.xml'
+        isActive: false
+        isError: true
+      - id: 'GetScheduleInfoResponseError_ERROR_SESSION_TIMED_OUT'
+        description: 'Ошибка ERROR_SESSION_TIMED_OUT'
+        path: 'get-schedule-info/responses/ERROR_SESSION_TIMED_OUT.xml'
+        isActive: false
+        isError: true
+  - name: 'CreateAppointment'
+    request: 'CreateAppointmentRequest'
+    response: 'CreateAppointmentResponse'
+    rules: 
+      - id: 'CreateAppointmentResponse'
+        description: 'Ответ с информацией об успешной записи гражданина на прием'
+        path: 'create-appointment/responses/create-appointment-response.xml'
+        isActive: true
+        isError: false
+      - id: 'CreateAppointmentRequest_APPOINT_PATIENT_REGISTERED_OTHER_SPECIALIST'
+        description: 'Ответ в случае наличия записи к врачу той же должности у гражданина'
+        path: 'create-appointment/responses/APPOINT_PATIENT_REGISTERED_OTHER_SPECIALIST.xml'
+        isActive: false
+        isError: false
+      - id: 'CreateAppointmentRequest_APPOINT_PATIENT_REGISTERED_SPECIALIST'
+        description: 'Ответ в случае наличия у гражданина записи на это время к другому специалисту'
+        path: 'create-appointment/responses/APPOINT_PATIENT_REGISTERED_SPECIALIST.xml'
+        isActive: false
+        isError: false
+      - id: 'CreateAppointmentRequest_APPOINT_TIME_AVAILABLE_PATIENT_OTHER_AGE'
+        description: 'Ответ в случае невозможности записи на выбранное время в связи доступностью записи только граждан определенного возраста'
+        path: 'create-appointment/responses/APPOINT_TIME_AVAILABLE_PATIENT_OTHER_AGE.xml'
+        isActive: false
+        isError: false
+      - id: 'CreateAppointmentRequest_APPOINT_TIME_IS_BUSY'
+        description: 'Извините, запись невозможна. Время уже занято другим пациентом. Выберите другое время'
+        path: 'create-appointment/responses/APPOINT_TIME_IS_BUSY.xml'
+        isActive: false
+        isError: false
+      - id: 'CreateAppointmentRequest_APPOINT_VISIT_TIME_HAS_PASSED'
+        description: 'Извините, запись невозможна. Время начала приема уже прошло. Выберите другое время'
+        path: 'create-appointment/responses/APPOINT_VISIT_TIME_HAS_PASSED.xml'
+        isActive: false
+        isError: false
+      - id: 'CreateAppointmentResponseError_ERROR_INTERNAL_ERROR'
+        description: 'Ошибка ERROR_INTERNAL_ERROR'
+        path: 'create-appointment/responses/ERROR_INTERNAL_ERROR.xml'
+        isActive: false
+        isError: true
+      - id: 'CreateAppointmentResponseError_FOR_CALL_EPGU_ERROR_DATA_MIS'
+        description: 'Ошибка FOR_CALL_EPGU_ERROR_DATA_MIS'
+        path: 'create-appointment/responses/FOR_CALL_EPGU_ERROR_DATA_MIS.xml'
+        isActive: false
+        isError: true
+  - name: 'CancelAppointment'
+    request: 'CancelAppointmentRequest'
+    response: 'CancelAppointmentResponse'
+    rules: 
+      - id: 'CancelAppointmentResponse'
+        description: 'Ответ в случае успешной отмены записи'
+        path: 'cancel-appointment/responses/cancel-appointment-response.xml'
+        isActive: true
+        isError: false
+      - id: 'CancelAppointmentResponse_RECORD_CANNOT_CANCELED'
+        description: 'Ответ в случае невозможности отмены записи'
+        path: 'cancel-appointment/responses/RECORD_CANNOT_CANCELED.xml'
+        isActive: false
+        isError: false
+      - id: 'CancelAppointmentResponse_RECORD_NOT_FOUND'
+        description: 'Ответ в случае если запись не найдена'
+        path: 'cancel-appointment/responses/RECORD_NOT_FOUND.xml'
+        isActive: false
+        isError: false
+      - id: 'СancelAppointmentResponseError_ERROR_INTERNAL_ERROR'
+        description: 'Ошибка ERROR_INTERNAL_ERROR'
+        path: 'cancel-appointment/responses/ERROR_INTERNAL_ERROR.xml'
+        isActive: false
+        isError: true
+  - name: 'ReferralAppointmentInformation'
+    request: 'ReferralAppointmentInformationRequest'
+    response: 'ReferralAppointmentInformationResponse'
+    rules: 
+      - id: 'ReferralAppointmentInformationResponse'
+        description: 'Ответ с информацией об успешном приеме сведений'
+        path: 'referral-appointment-information/responses/referral-appointment-information-response.xml'
+        isActive: true
+        isError: false
+      - id: 'ReferralAppointmentInformationResponseError_ERROR_INTERNAL_ERROR'
+        description: 'Ошибка ERROR_INTERNAL_ERROR'
+        path: 'referral-appointment-information/responses/ERROR_INTERNAL_ERROR.xml'
+        isActive: false
+        isError: true
+      - id: 'ReferralAppointmentInformationResponseError_ERROR_FAILURE_OPERATION'
+        description: 'Ошибка ERROR_FAILURE_OPERATION'
+        path: 'referral-appointment-information/responses/ERROR_FAILURE_OPERATION.xml'
+        isActive: false
+        isError: true
+
+
+  

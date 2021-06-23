@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetMOInfoExtendedResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <MO_List>
+                {{#each hospitals}}
+                <MO>
+                    <MO_Id>{{_id}}</MO_Id>
+                    <MO_OID>{{oid}}</MO_OID>
+                    <MO_Name>{{name}}</MO_Name>
+                    <MO_Address>{{address}}</MO_Address>
+                    <MO_Phone>{{phone}}</MO_Phone>
+                    <Age_Group>{{age_group}}</Age_Group>
+                </MO>
+                {{/each}}
+            </MO_List>
+        </GetMOInfoExtendedResponse>
+    </soap:Body>
+</soap:Envelope>

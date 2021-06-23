@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ответ с перечнем должностей медицинских специалистов -->
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetServicePostSpecsInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <Service_Post_Specs>
+                {{#each doctors}}
+                <Service_Post>
+                    <Post>
+                        <Post_Id>{{post_id}}</Post_Id>
+                        {{#if add_info_post}}
+                        <Add_Info_Post>
+                            <Inner_Id>{{inner_id}}</Inner_Id>
+                            <Inner_Name>{{inner_name}}</Inner_Name>
+                        </Add_Info_Post>
+                        {{/if}}
+                    </Post>
+                </Service_Post>
+                {{/each}}
+            </Service_Post_Specs>
+        </GetServicePostSpecsInfoResponse>
+    </soap:Body>
+</soap:Envelope>

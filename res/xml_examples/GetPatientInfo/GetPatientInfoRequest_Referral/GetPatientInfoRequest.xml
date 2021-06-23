@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <!--Блок подписи -->
+    </soapenv:Header>
+    <soapenv:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-112254">
+        <GetPatientInfoRequest xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>39e2b369-6ae7-47f2-8038-e286fec8cf6f</Session_ID>
+            <Patient_Data>
+                <OMS_Number>3216549870321452</OMS_Number>
+                <SNILS>00066666625</SNILS>
+                <First_Name>Ольга</First_Name>
+                <Last_Name>Иванова</Last_Name>
+                <Middle_Name>Николаевна</Middle_Name>
+                <Birth_Date>1966-06-06</Birth_Date>
+                <Sex>F</Sex>
+            </Patient_Data>
+            <!-- Необходимо вернуть направления гражданина при их наличии-->
+            <Pass_referral>1</Pass_referral>
+        </GetPatientInfoRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

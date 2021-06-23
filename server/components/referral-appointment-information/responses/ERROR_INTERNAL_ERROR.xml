@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <ReferralAppointmentInformationResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Book_Id_Mis>{{book_id_mis}}</Book_Id_Mis>
+            <Status_Code>INTERNAL_ERROR</Status_Code>
+            <Comment>Внутренняя ошибка системы</Comment>
+        </ReferralAppointmentInformationResponse>
+    </soap:Body>
+</soap:Envelope>

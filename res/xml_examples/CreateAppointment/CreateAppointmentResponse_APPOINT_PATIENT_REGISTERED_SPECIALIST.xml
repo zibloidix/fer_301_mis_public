@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <CreateAppointmentResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>60c52d2e-825a-4120-9e80-eb170ea4aa37</Session_ID>
+            <Book_Id_Mis/>
+            <Status>
+                <Status_Code>APPOINT_PATIENT_REGISTERED_SPECIALIST</Status_Code>
+                <Parameters>
+                    <Parameter>
+                        <Name>Specialist</Name>
+                        <Value>Иванова Анна Аркадьевна</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Room</Name>
+                        <Value>Кабинет 204</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Service</Name>
+                        <Value>Прием (осмотр, консультация) врача-терапевта первичный</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Visit_Time</Name>
+                        <Value>30.07.2019 10:00</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Create_Date</Name>
+                        <Value>25.07.2019</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Source_Record</Name>
+                        <Value>INFOMAT</Value>
+                    </Parameter>
+                </Parameters>
+            </Status>
+            <Slot_Id>085808e1-198f-4993-b773-8c1dc9b5af4e</Slot_Id>
+            <Visit_Time>2019-07-30T13:30:00+03:00</Visit_Time>
+        </CreateAppointmentResponse>
+    </soap:Body>
+</soap:Envelope>

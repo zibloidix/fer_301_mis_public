@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetServicePostSpecsInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>1291473c-91cb-11e9-892c-005056b1f66d</Session_ID>
+            <Service_Post_Specs>
+                <Service_Post>
+                    <!--врач-терапевт-->
+                    <Post>
+                        <Post_Id>109</Post_Id>
+                    </Post>
+                </Service_Post>
+                <Service_Post>
+                    <Post>
+                        <!--врач-невролог-->
+                        <Post_Id>45</Post_Id>
+                        <!--передача должности врача, отсутствующей в справочнике-->
+                        <Add_Info_Post>
+                            <Inner_Id>45_098</Inner_Id>
+                            <Inner_Name>врач-вертеброневролог</Inner_Name>
+                        </Add_Info_Post>
+                    </Post>
+                </Service_Post>
+            </Service_Post_Specs>
+        </GetServicePostSpecsInfoResponse>
+    </soap:Body>
+</soap:Envelope>

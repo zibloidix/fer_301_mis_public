@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetPatientInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>413f9340-91be-11e9-ba04-005056b1f66d</Session_ID>
+            <Patient_Id>78541412</Patient_Id>
+        </GetPatientInfoResponse>
+    </soap:Body>
+</soap:Envelope>

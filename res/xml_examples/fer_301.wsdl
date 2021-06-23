@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:m="http://www.rt-eu.ru/med/er/v2_0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="MisSoapService" targetNamespace="http://www.rt-eu.ru/med/er/v2_0">
+  <import namespace="http://www.rt-eu.ru/med/er/v2_0" location="er-schema.xsd"/>
+  <message name="GetPatientInfo">
+    <part name="parameter" element="m:GetPatientInfoRequest"/>
+  </message>
+  <message name="GetPatientInfoResponse">
+    <part name="parameter" element="m:GetPatientInfoResponse"/>
+  </message>
+  <message name="GetReferralInfo">
+    <part name="parameter" element="m:GetReferralInfoRequest"/>
+  </message>
+  <message name="GetReferralInfoResponse">
+    <part name="parameter" element="m:GetReferralInfoResponse"/>
+  </message>
+  <message name="GetMOInfoExtended">
+    <part name="parameter" element="m:GetMOInfoExtendedRequest"/>
+  </message>
+  <message name="GetMOInfoExtendedResponse">
+    <part name="parameter" element="m:GetMOInfoExtendedResponse"/>
+  </message>
+  <message name="GetMOResourceInfo">
+    <part name="parameter" element="m:GetMOResourceInfoRequest"/>
+  </message>
+  <message name="GetMOResourceInfoResponse">
+    <part name="parameter" element="m:GetMOResourceInfoResponse"/>
+  </message>
+  <message name="GetServicePostSpecsInfo">
+    <part name="parameter" element="m:GetServicePostSpecsInfoRequest"/>
+  </message>
+  <message name="GetServicePostSpecsInfoResponse">
+    <part name="parameter" element="m:GetServicePostSpecsInfoResponse"/>
+  </message>
+  <message name="GetScheduleInfo">
+    <part name="parameter" element="m:GetScheduleInfoRequest"/>
+  </message>
+  <message name="GetScheduleInfoResponse">
+    <part name="parameter" element="m:GetScheduleInfoResponse"/>
+  </message>
+  <message name="CreateAppointment">
+    <part name="parameter" element="m:CreateAppointmentRequest"/>
+  </message>
+  <message name="CreateAppointmentResponse">
+    <part name="parameter" element="m:CreateAppointmentResponse"/>
+  </message>
+  <message name="CancelAppointment">
+    <part name="parameter" element="m:CancelAppointmentRequest"/>
+  </message>
+  <message name="CancelAppointmentResponse">
+    <part name="parameter" element="m:CancelAppointmentResponse"/>
+  </message>
+  <message name="ReferralAppointmentInformation">
+    <part name="parameter" element="m:ReferralAppointmentInformationRequest"/>
+  </message>
+  <message name="ReferralAppointmentInformationResponse">
+    <part name="parameter" element="m:ReferralAppointmentInformationResponse"/>
+  </message>
+  <portType name="ErWebService">
+    <operation name="GetPatientInfo">
+      <input message="m:GetPatientInfo"/>
+      <output message="m:GetPatientInfoResponse"/>
+    </operation>
+    <operation name="GetReferralInfo">
+      <input message="m:GetReferralInfo"/>
+      <output message="m:GetReferralInfoResponse"/>
+    </operation>
+    <operation name="GetMOInfoExtended">
+      <input message="m:GetMOInfoExtended"/>
+      <output message="m:GetMOInfoExtendedResponse"/>
+    </operation>
+    <operation name="GetMOResourceInfo">
+      <input message="m:GetMOResourceInfo"/>
+      <output message="m:GetMOResourceInfoResponse"/>
+    </operation>
+    <operation name="GetServicePostSpecsInfo">
+      <input message="m:GetServicePostSpecsInfo"/>
+      <output message="m:GetServicePostSpecsInfoResponse"/>
+    </operation>
+    <operation name="GetScheduleInfo">
+      <input message="m:GetScheduleInfo"/>
+      <output message="m:GetScheduleInfoResponse"/>
+    </operation>
+    <operation name="CreateAppointment">
+      <input message="m:CreateAppointment"/>
+      <output message="m:CreateAppointmentResponse"/>
+    </operation>
+    <operation name="CancelAppointment">
+      <input message="m:CancelAppointment"/>
+      <output message="m:CancelAppointmentResponse"/>
+    </operation>
+    <operation name="ReferralAppointmentInformation">
+      <input message="m:ReferralAppointmentInformation"/>
+      <output message="m:ReferralAppointmentInformationResponse"/>
+    </operation>
+  </portType>
+  <binding name="ErPortal" type="m:ErWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetPatientInfo">
+      <soap:operation soapAction="GetPatientInfo" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetReferralInfo">
+      <soap:operation soapAction="GetReferralInfo" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetMOInfoExtended">
+      <soap:operation soapAction="GetMOInfoExtended" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetMOResourceInfo">
+      <soap:operation soapAction="GetMOResourceInfo" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetServicePostSpecsInfo">
+      <soap:operation soapAction="GetServicePostSpecsInfo" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetScheduleInfo">
+      <soap:operation soapAction="GetScheduleInfo" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CreateAppointment">
+      <soap:operation soapAction="CreateAppointment" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CancelAppointment">
+      <soap:operation soapAction="CancelAppointment" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ReferralAppointmentInformation">
+      <soap:operation soapAction="ReferralAppointmentInformation" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ErPortal">
+    <port name="ErWebService" binding="m:ErPortal">
+      <soap:address location="http://conc-dev.rt-eu.ru/new-rmis-server/MisSoapService?wsdl"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,1 @@
+module.exports = require('./get-schedule-info.js');

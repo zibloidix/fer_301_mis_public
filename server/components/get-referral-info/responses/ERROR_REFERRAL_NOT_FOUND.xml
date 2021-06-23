@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+    </soap:Header>
+    <soap:Body>
+        <GetReferralInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <Error>
+                <Error_Code>REFERRAL_NOT_FOUND</Error_Code>
+                <Error_Message>Направление не найдено</Error_Message>
+            </Error>
+        </GetReferralInfoResponse>
+    </soap:Body>
+</soap:Envelope>

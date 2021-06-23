@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+    </soap:Header>
+    <soap:Body>
+        <CreateAppointmentResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <Book_Id_Mis>4c0443da-1da8-4895-8455-172d2362c6f5</Book_Id_Mis>
+            <Status>
+                <Status_Code>SUCCESS</Status_Code>
+                <Comment>Запись выполнена успешно</Comment>
+            </Status>      
+            <Slot_Id>e87ea28d-1dbc-43f0-a158-d202a1c21607</Slot_Id>
+            <Visit_Time>2020-08-28T11:00:00+11:00</Visit_Time>
+            <Room>596А</Room>
+        </CreateAppointmentResponse>
+    </soap:Body>
+</soap:Envelope>

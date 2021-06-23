@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Запрос на отмену записи при ошибке передачи данных о записи на ЕПГУ -->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <!--Блок подписи -->
+    </soapenv:Header>
+    <soapenv:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-9494c378-db8f-4ffc-a6bd-d331da27e519">
+        <CancelAppointmentRequest xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Book_Id_Mis>65249896</Book_Id_Mis>
+            <Canceled_Reason>DATA_TRANSFER_ERROR_AT_EPGU</Canceled_Reason>
+        </CancelAppointmentRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

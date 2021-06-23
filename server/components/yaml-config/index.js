@@ -1,0 +1,1 @@
+module.exports = require('./yaml-config.component.js');

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ответ с перечнем ресурсов - специалистов -->
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetMOResourceInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <MO_Resource_List>
+                <MO_Available>
+                    <MO>
+                        <MO_Id>{{hospital._id}}</MO_Id>
+                        <MO_OID>{{hospital.oid}}</MO_OID>
+                        <MO_Name>{{hospital.name}}</MO_Name>
+                        <MO_Address>{{hospital.address}}</MO_Address>
+                        <MO_Phone>{{hospital.phone}}</MO_Phone>
+                        <Age_Group>{{hospital.age_group}}</Age_Group>
+                    </MO>
+                    <Resource_Available>
+                        {{#each doctors}}
+                        <Resource>
+                            <Specialist>
+                                <Last_Name>{{last_name}}</Last_Name>
+                                <First_Name>{{first_name}}</First_Name>
+                                <Middle_Name>{{middle_name}}</Middle_Name>
+                                <SNILS>{{snils}}</SNILS>
+                                <Post>
+                                    <Post_Id>{{post_id}}</Post_Id>
+                                    <Add_Info_Post>
+                                        <Inner_Id>{{inner_id}}</Inner_Id>
+                                        <Inner_Name>{{inner_name}}</Inner_Name>
+                                    </Add_Info_Post>
+                                </Post>
+                            </Specialist>
+                            <Available_Dates>
+                                {{#each ../available_dates}}
+                                <Available_Date>{{this}}</Available_Date>
+                                {{/each}}
+                            </Available_Dates>
+                            <Age_Group>{{age_group}}</Age_Group>
+                        </Resource>
+                        {{/each}}
+                    </Resource_Available>
+                </MO_Available>
+            </MO_Resource_List>
+        </GetMOResourceInfoResponse>
+    </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <!--Блок подписи -->
+    </soapenv:Header>
+    <soapenv:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-0877d150-90d8-4233-9cd9-6d5ee6bd07c0">
+        <GetScheduleInfoRequest xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>413f9340-91be-11e9-ba04-005056b1f66d</Session_ID>
+            <Room_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752.10212</Room_OID>
+            <MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</MO_OID>
+            <Service_Specialty>
+                <!--Функциональная диагностика-->
+                <Specialty_Id>35</Specialty_Id>
+                <!--Информация об оказываемой услуге, отсутствующей в справочнике-->
+                <Services_Info>
+                    <Service>
+                        <!--Эхокардиография (имеется в справочнике)-->
+                        <Service_Id>A04.10.002</Service_Id>
+                        <!-- Эхокардиография с допплерографией (отсутствует в справочнике)-->
+                        <Add_Info_Service>
+                            <Inner_Id>A04.10.002.010</Inner_Id>
+                            <Inner_Name>Эхокардиография с допплерографией</Inner_Name>
+                        </Add_Info_Service>
+                    </Service>
+                </Services_Info>
+            </Service_Specialty>
+            <Referral_Id>147999</Referral_Id>
+            <Start_Date_Range>2019-06-19</Start_Date_Range>
+            <End_Date_Range>2019-07-03</End_Date_Range>
+            <Start_Time_Range>00:00:00</Start_Time_Range>
+            <End_Time_Range>23:59:00</End_Time_Range>
+        </GetScheduleInfoRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

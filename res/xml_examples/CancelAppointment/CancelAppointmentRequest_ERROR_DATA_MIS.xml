@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Запрос на отмену записи при передаче некорректных данных в ответе CreateAppointmentResponse -->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <!--Блок подписи -->
+    </soapenv:Header>
+    <soapenv:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-9494c378-db8f-4ffc-a6bd-d331da27e519">
+        <CancelAppointmentRequest xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Book_Id_Mis>65249896</Book_Id_Mis>
+            <Canceled_Reason>ERROR_DATA_MIS</Canceled_Reason>
+            <Error_Data_Parameters>
+                <Parameter>
+    Приложение Бвв                     <Message>Значение не соответствует переданному в запросе</Message>
+                    <Path>Slot_Id</Path>
+                    <Value>235dff2a-eee0-45f4-bc73-df0e700b69cc</Value>
+                </Parameter>
+                <Parameter>
+                    <Message>Значение не соответствует переданному в запросе </Message>
+    Приложение Бвг                     <Path>Visit_Time</Path>
+                    <Value>2019-07-20T15:00:00+03:00</Value>
+                </Parameter>
+            </Error_Data_Parameters>
+        </CancelAppointmentRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

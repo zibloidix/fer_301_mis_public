@@ -1,0 +1,1 @@
+module.exports = require('./wsdl.component.js');

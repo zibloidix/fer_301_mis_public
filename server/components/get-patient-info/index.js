@@ -1,0 +1,1 @@
+module.exports = require('./get-patient-info.component.js');

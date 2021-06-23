@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetMOResourceInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <Error>
+                <Error_Code>SESSION_TIMED_OUT</Error_Code>
+                <Error_Message>Истекло время ожидания в рамках сессии</Error_Message>
+            </Error>
+        </GetMOResourceInfoResponse>
+    </soap:Body>
+</soap:Envelope>

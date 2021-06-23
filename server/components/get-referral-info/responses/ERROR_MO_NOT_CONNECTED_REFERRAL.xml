@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetReferralInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <Error>
+                <Error_Code>MO_NOT_CONNECTED_REFERRAL</Error_Code>
+                <Error_Message>Медицинская организация, в которую выдано направление, не подключена к ИС Поставщика. Запись в МО невозможна.</Error_Message>
+            </Error>
+        </GetReferralInfoResponse>
+    </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ответ с информацией об успешной записи гражданина на прием -->
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <CreateAppointmentResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <Book_Id_Mis>{{slot.book_id_mis}}</Book_Id_Mis>
+            <Status>
+                <Status_Code>SUCCESS</Status_Code>
+                <Comment>Запись выполнена успешно</Comment>
+            </Status>      
+            <Slot_Id>{{slot.slot_id}}</Slot_Id>
+            <Visit_Time>{{slot.visittime}}</Visit_Time>
+            <Room>{{room.number}}</Room>
+        </CreateAppointmentResponse>
+    </soap:Body>
+</soap:Envelope>

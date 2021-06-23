@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <GetMOResourceInfoResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>413f9340-91be-11e9-ba04-005056b1f66d</Session_ID>
+            <MO_Resource_List>
+                <MO_Available>
+                    <MO>
+                        <MO_Id>4931</MO_Id>
+                        <MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</MO_OID>
+                        <MO_Name>Поликлиника №8, ПЕРМСКАЯ ЦРБ</MO_Name>
+                        <MO_Address>Пермский край, п. Кукуштан, ул. Уральская, д. 18, Л. Ж</MO_Address>
+                        <MO_Phone>РЕГИСТРАТУРА 222-61-80</MO_Phone>
+                        <Age_Group>ALL</Age_Group>
+                    </MO>
+                    <Resource_Available>
+                        <Resource>
+                            <Room>
+                                <Room_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752.24566</Room_OID>
+                                <Room_Number>108</Room_Number>
+                                <Room_Name>Кабинет</Room_Name>
+                            </Room>
+                            <Available_Dates>
+                                <Available_Date>2019-06-19T10:15:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-20T14:30:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-21T10:45:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-24T16:45:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-25T08:30:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-26T11:45:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-27T14:00:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-28T13:15:00.000+03:00</Available_Date>
+                                <Available_Date>2019-07-01T09:30:00.000+03:00</Available_Date>
+                                <Available_Date>2019-07-02T09:30:00.000+03:00</Available_Date>
+                            </Available_Dates>
+                            <Age_Group>ALL</Age_Group>
+                        </Resource>
+                        <Resource>
+                            <Room>
+                                <Room_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752.10212</Room_OID>
+                                <Room_Number>110</Room_Number>        
+                                <Room_Name>Кабинет</Room_Name>                                                        
+                            </Room>
+                            <Available_Dates>
+                                <Available_Date>2019-06-19T08:15:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-20T14:30:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-21T10:45:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-24T16:45:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-25T08:30:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-26T11:45:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-27T14:00:00.000+03:00</Available_Date>
+                                <Available_Date>2019-06-28T13:15:00.000+03:00</Available_Date>
+                                <Available_Date>2019-07-01T09:30:00.000+03:00</Available_Date>
+                                <Available_Date>2019-07-02T12:30:00.000+03:00</Available_Date>
+                            </Available_Dates>
+                            <Age_Group>CHILD</Age_Group>
+                        </Resource>
+                    </Resource_Available>
+                </MO_Available>
+            </MO_Resource_List>
+        </GetMOResourceInfoResponse>
+    </soap:Body>
+</soap:Envelope>

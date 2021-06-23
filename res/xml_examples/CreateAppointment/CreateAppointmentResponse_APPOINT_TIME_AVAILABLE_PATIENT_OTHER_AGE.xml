@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <CreateAppointmentResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>60c52d2e-825a-4120-9e80-eb170ea4aa37</Session_ID>
+            <Book_Id_Mis/>
+            <Status>
+                <Status_Code>APPOINT_TIME_AVAILABLE_PATIENT_OTHER_AGE</Status_Code>
+                <!--Запись возможна для пациентов от 7 до 14 лет-->
+                <Parameters>
+                    <Parameter> 
+                        <Name>Min_Age</Name>
+                        <Value>7</Value>
+                    </Parameter>
+                    <Parameter> 
+                        <Name>Max_Age</Name>
+                        <Value>14</Value>
+                    </Parameter>
+                </Parameters>
+            </Status>
+            <Slot_Id>085808e1-198f-4993-b773-8c1dc9b5af4e</Slot_Id>
+            <Visit_Time>2019-07-30T15:30:00+03:00</Visit_Time>
+        </CreateAppointmentResponse>
+    </soap:Body>
+</soap:Envelope>

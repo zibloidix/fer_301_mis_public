@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <!--Блок подписи -->
+    </soapenv:Header>
+    <soapenv:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-a809c956-b25d-4ac2-9b77-271e15414fa4">
+        <ReferralAppointmentInformationRequest xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Book_Id_Mis>123455554488</Book_Id_Mis>
+            <Referral_Id>147852</Referral_Id>
+            <Appointment_Status>RECORDED</Appointment_Status>
+            <MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</MO_OID>
+            <MO_Name>Поликлиника №8,ПЕРМСКАЯ ЦРБ</MO_Name>
+            <Resource_Name>Иванов Петр Иванович</Resource_Name>
+            <Visit_Time>2019-08-16T11:00:00+03:00</Visit_Time>
+        </ReferralAppointmentInformationRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

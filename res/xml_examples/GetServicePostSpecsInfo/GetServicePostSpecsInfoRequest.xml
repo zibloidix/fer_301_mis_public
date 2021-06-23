@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <!-- Блок подписи-->
+    </soapenv:Header>
+    <soapenv:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-252995f1-41d4-4dc0-bfad-b4d0b5ec43a8">
+        <GetServicePostSpecsInfoRequest xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>1291473c-91cb-11e9-892c-005056b1f66d</Session_ID>
+            <MO_Id>31</MO_Id>
+        </GetServicePostSpecsInfoRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

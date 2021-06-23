@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ответ в случае наличия записи к врачу той же должности у гражданина -->
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!--Блок подписи -->
+    </soap:Header>
+    <soap:Body>
+        <CreateAppointmentResponse xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>{{UUID_SESSION_ID}}</Session_ID>
+            <Book_Id_Mis/>
+            <Status>
+                <Status_Code>APPOINT_PATIENT_REGISTERED_OTHER_SPECIALIST</Status_Code>
+                <Parameters>
+                    <Parameter> 
+                        <Name>Specialist</Name>
+                        <Value>{{errorRegSpecialist.specialist}}</Value>
+                    </Parameter>
+                    <Parameter> 
+                        <Name>Post</Name>
+                        <Value>{{errorRegSpecialist.post}}</Value>
+                    </Parameter>
+                    <Parameter> 
+                        <Name>Room</Name>
+                        <Value>Кабинет {{errorRegSpecialist.room}}</Value>
+                    </Parameter>
+                    <Parameter> 
+                        <Name>Service</Name>
+                        <Value>{{errorRegSpecialist.service}}</Value>
+                    </Parameter>
+                    <Parameter> 
+                        <Name>Visit_Time</Name>
+                        <Value>{{errorRegSpecialist.visit_time_human}}</Value>
+                    </Parameter>
+                    <Parameter> 
+                        <Name>Create_Date</Name>
+                        <Value>{{errorRegSpecialist.create_date}}</Value>
+                    </Parameter>
+                    <Parameter> 
+                        <Name>Source_Record</Name>
+                        <Value>{{errorRegSpecialist.source_record}}</Value>
+                    </Parameter>
+                </Parameters>
+            </Status>
+            <Slot_Id>{{errorRegSpecialist.slot_id}}</Slot_Id>
+            <Visit_Time>{{errorRegSpecialist.visit_time}}</Visit_Time>
+        </CreateAppointmentResponse>
+    </soap:Body>
+</soap:Envelope>

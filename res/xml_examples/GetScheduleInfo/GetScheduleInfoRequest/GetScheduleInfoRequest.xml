@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <!--Блок подписи -->
+    </soapenv:Header>
+    <soapenv:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-0877d150-90d8-4233-9cd9-6d5ee6bd07c0">
+        <GetScheduleInfoRequest  xmlns="http://www.rt-eu.ru/med/er/v2_0">
+            <Session_ID>413f9340-91be-11e9-ba04-005056b1f66d</Session_ID>
+            <Specialist_SNILS>00000000000</Specialist_SNILS>
+            <MO_OID>1.2.643.5.1.13.13.12.2.59.6056.0.125752</MO_OID>
+            <Service_Post>
+                <Post>
+                    <!--врач - детский хирург-->
+                    <Post_Id>28</Post_Id>
+                </Post>
+            </Service_Post>
+            <Start_Date_Range>2019-06-19</Start_Date_Range>
+            <End_Date_Range >2019-07-03</End_Date_Range >
+            <Start_Time_Range>00:00:00</Start_Time_Range>
+            <End_Time_Range>23:59:00</End_Time_Range>
+        </GetScheduleInfoRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
